@@ -45,7 +45,7 @@ Usage
 import numpy as np
 import stim
 import pymatching
-from qiskit import QuantumCircuit, transpile
+from qiskit import QuantumCircuit, result, transpile
 from typing import Optional
 
 
@@ -100,8 +100,104 @@ def make_stim_circuit(
     -------
     stim.Circuit
     """
+    basis = basis.upper()
 
-    return
+    if basis not in ("X", "Z"):
+        raise ValueError("basis must be 'X' or 'Z'")
+    if distance < 3:
+        raise ValueError("distance must be at least 3")
+    if rounds < 1:
+        raise ValueError("rounds must be at least 1")
+
+    noise_args = dict(noise or {})
+
+    initial_reset_error = 0.0
+    if no_reset:
+        initial_reset_error = noise_args.pop(
+            "after_reset_flip_probability", 0.0
+        )
+        noise_args["after_reset_flip_probability"] = 0.0
+
+    circuit = stim.Circuit.generated(
+        f"surface_code:rotated_memory_{basis.lower()}",
+        distance=distance,
+        rounds=rounds,
+        **noise_args,
+    )
+
+    if no_reset:
+        circuit = _remove_round_resets(
+            circuit,
+            initial_reset_error=initial_reset_error,
+        )
+
+    return circuit
+
+def _remove_round_resets(
+    circuit: stim.Circuit,
+    initial_reset_error: float = 0.0,
+) -> stim.Circuit:
+    result = stim.Circuit()
+
+    num_measured = 0
+
+    last_measurement = {}
+
+    measurement_terms = []
+
+    for instruction in circuit.flattened():
+        name = instruction.name
+        targets = instruction.targets_copy()
+        args = instruction.gate_args_copy()
+
+
+        assert name not in ("MY", "MRX", "MRY", "MXX", "MZZ", "MPP")
+
+        if name in ("M", "MR", "MX"):
+            for target in targets:
+                q = target.value
+
+                terms = {num_measured}
+
+                if name == "MR" and q in last_measurement:
+                    terms.add(last_measurement[q])
+
+                measurement_terms.append(terms)
+                last_measurement[q] = num_measured
+                num_measured += 1
+
+            new_name = "M" if name == "MR" else name
+            result.append(new_name, targets, args)
+
+        elif name in ("DETECTOR", "OBSERVABLE_INCLUDE"):
+            rewritten = set()
+
+            for target in targets:
+                original_index = num_measured + target.value
+
+                rewritten ^= measurement_terms[original_index]
+
+            new_targets = [
+                stim.target_rec(index - num_measured)
+                for index in sorted(rewritten)
+            ]
+
+            result.append(name, new_targets, args)
+
+        else:
+            result.append(instruction)
+
+            if initial_reset_error:
+                if name == "R":
+                    result.append(
+                        "X_ERROR", targets, initial_reset_error
+                    )
+                elif name == "RX":
+                    result.append(
+                        "Z_ERROR", targets, initial_reset_error
+                    )
+
+    return result
 
 def get_circuit_info(circuit: stim.Circuit) -> dict:
     """
@@ -193,9 +289,33 @@ def make_qrisp_experiment(
     -------
     iqm.qrisp_iqm.DetectorExperiment
     """
+    from stim_to_qrisp import stim_to_detector_experiment
 
-    return
+    if p is not None and not 0 <= p <= 1:
+        raise ValueError("p must be between 0 and 1")
 
+    noise = None
+    if p is not None:
+        noise = {
+            "after_clifford_depolarization": p,
+            "after_reset_flip_probability": p,
+            "before_measure_flip_probability": p,
+            "before_round_data_depolarization": p,
+        }
+
+    circuit = make_stim_circuit(
+        distance=distance,
+        rounds=rounds,
+        basis=basis,
+        no_reset=no_reset,
+        noise=noise,
+    )
+
+    experiment = stim_to_detector_experiment(
+        circuit,
+        no_reset=False,
+    )
+    return experiment
 
 ##########################
 # Below the necessary steps. No need to put everything in this file. 

@@ -4,9 +4,32 @@ from build_emerald_qubit_rotated import *
 from extract_syndromes import *
 from qiskit import transpile
 
+import os
+from dotenv import load_dotenv
 
-TOKEN = ""
+
+load_dotenv()
+
+TOKEN = os.getenv("IQM_TOKEN", None)
 SERVER_URL = "https://resonance.iqm.tech"
+
+
+def _strip_qrisp_model_annotations(qc):
+    """Remove model-only instructions from a copy before hardware routing.
+
+    Detector parities remain in DetectorExperiment's classical processing;
+    noise annotations remain in its Stim model. Neither is a physical gate.
+    Preserve all measurement instructions and classical-bit ordering.
+    """
+    from qrisp.jasp.primitives.parity_primitive import ParityOperation
+    from qrisp.misc.stim_tools import StimNoiseGate
+
+    hardware_qc = qc.copy()
+    hardware_qc.data = [
+        inst for inst in hardware_qc.data
+        if not isinstance(inst.op, (ParityOperation, StimNoiseGate))
+    ]
+    return hardware_qc
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -129,17 +152,20 @@ def run_qrisp(
     """
     import os
     from iqm.qrisp_iqm import IQMBackend
+    from qrisp import CircuitPass
     from stim_to_qrisp import stim_to_detector_experiment
 
     os.environ["IQM_TOKEN"] = token or TOKEN
 
     # Build circuits, exchange for make_qrisp_experiment() if desired
-    stim_circ  = make_stim_circuit(distance, rounds, no_reset=no_reset, noise=None)
+    # stim_circ  = make_stim_circuit(distance, rounds, no_reset=no_reset, noise=None)
 
     # CREATE AN EXPERIMENT TO BE EXECUTED ON HARDWARE
-    experiment = []
-    #experiment = stim_to_detector_experiment(stim_circ, no_reset=no_reset)
-    #experiment = make_qrisp_experiment(distance, rounds, no_reset=no_reset)
+    # experiment = []
+    # experiment = stim_to_detector_experiment(stim_circ, no_reset=no_reset)
+    experiment = make_qrisp_experiment(
+        distance, rounds, no_reset=no_reset, p=0.003
+    )
 
     # Connect to IQM Resonance
     # Layout: think about the pass_manager. iqm.qrisp_iqm.vf2pp_layout finds an
@@ -150,11 +176,28 @@ def run_qrisp(
     # further arguments
     )
 
+    # IQM's router assumes every instruction has at least one qubit.
+    # Strip classical parity/model annotations before its default passes.
+    backend.pm.insert_pass(0, CircuitPass(_strip_qrisp_model_annotations))
+
     # Run the experiment on the backend and collect detection events + observable flips
     # TO BE DONE
-    det_events, obs_flips = [], []
 
-    return {"det_events": det_events, "obs_flips": obs_flips}
+    model_circuit = experiment.to_stim()
+    dem = model_circuit.detector_error_model(decompose_errors=True)
+
+    det_events, obs_flips = experiment._sample_via_backend(
+        shots=shots,
+        backend=backend
+    )
+
+    det_events = np.array(det_events, dtype=bool)
+    obs_flips  = np.array(obs_flips, dtype=bool)
+
+    assert det_events.shape == (shots, model_circuit.num_detectors)
+    assert obs_flips.shape == (shots, model_circuit.num_observables)
+
+    return {"det_events": det_events, "obs_flips": obs_flips, "dem": dem, "shots":shots}
 
 
 
@@ -180,5 +223,19 @@ def decode_hardware_results(
 
     # USE e.g. PyMatching to decode
 
-    ler,err = [], []
+    matcher = pymatching.Matching.from_detector_error_model(
+        syndromes["dem"]
+    )
+
+    pred = matcher.decode_batch(syndromes["det_events"])
+    failed = np.any(pred != syndromes["obs_flips"], axis=1)
+
+    ler = float(failed.mean())
+    err = float(np.sqrt(ler * (1 - ler) / len(failed)))
+
     return ler, err
+
+if __name__ == "__main__":
+    syndromes = run_qrisp(distance=3, rounds=3, shots=1000, token=TOKEN, quantum_computer="garnet", no_reset=True)
+    ler, err = decode_hardware_results(syndromes)
+    print(f"Logical error probability: {ler:.4f} ± {err:.4f}")
