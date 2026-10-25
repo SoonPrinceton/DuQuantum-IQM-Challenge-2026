@@ -695,18 +695,6 @@
       "mode": "byte-identical copy"
     },
     {
-      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/ler_vs_rounds.png",
-      "destination": "plots/memory_15us_original.png",
-      "sha256": "e55ef4851a5f4431528fa09a760b4d9eac5f2f6c7d8295cf8986be07440b1cbe",
-      "mode": "byte-identical copy"
-    },
-    {
-      "source": "diagnostics/results/rounds_storage/20261024T224558_492023Z/plan.json",
-      "destination": "data/source_patch/plan.json",
-      "sha256": "750fdaebdb879258a78263b11275bd5f489917e11b5056ab1434220fb332b0c6",
-      "mode": "byte-identical copy"
-    },
-    {
       "source": "diagnostics/results/rounds_storage/20261024T224558_492023Z/architecture.json",
       "destination": "data/source_patch/architecture.json",
       "sha256": "df51b49ae3a48f07c90568a5baeabba96188648ca27fd5edebad4a8b0aa3e30f",
@@ -755,174 +743,6 @@
       "changes": [
         "Recompute measured results and plots; validate copied archives and direct no-routing circuit recipes; no new shot samples or experiments."
       ]
-    },
-    {
-      "source": "diagnostics/results/round_components/20261024T233022_874051Z/plan.json",
-      "destination": "evidence/previous_component_controls/0d6b5e63657b/plan.json",
-      "sha256": "0d6b5e63657b92ef43dfaa2fdd1ea5f8441afcf0f0e6314463af8abf3ab504d8",
-      "mode": "byte-identical copy"
-    },
-    {
-      "source": "diagnostics/results/round_components/20261024T233022_874051Z/results.json",
-      "destination": "evidence/previous_component_controls/0d6b5e63657b/results.json",
-      "sha256": "7059cf37754b73b5a734c655e303a04b019f532e17cabd43a709bdc5090ce084",
-      "mode": "byte-identical copy"
-    },
-    {
-      "source": "diagnostics/results/round_components/20261024T233022_874051Z/block0_job.json",
-      "destination": "evidence/previous_component_controls/0d6b5e63657b/block0_job.json",
-      "sha256": "be2c872c28a41e4f454aa7d95ccc39e514db3d397420523d85c24bf0d0a10035",
-      "mode": "byte-identical copy"
-    },
-    {
-      "source": "diagnostics/results/round_components/20261024T233022_874051Z/block1_job.json",
-      "destination": "evidence/previous_component_controls/0d6b5e63657b/block1_job.json",
-      "sha256": "6fb36cc9b52d3afd85c9b7bbf12f0289e124d6a42b2c29f3fae5433073e352a1",
-      "mode": "byte-identical copy"
-    },
-    {
-      "source": "diagnostics/results/round_components/20261024T233022_874051Z/block0_status.json",
-      "destination": "evidence/previous_component_controls/0d6b5e63657b/block0_status.json",
-      "sha256": "219b3ed491165fdf643703bad7df5736c8196706160b6a0e4f0b13939b1d9d64",
-      "mode": "byte-identical copy"
-    },
-    {
-      "source": "diagnostics/results/round_components/20261024T233022_874051Z/block1_status.json",
-      "destination": "evidence/previous_component_controls/0d6b5e63657b/block1_status.json",
-      "sha256": "18ea0a1fd25e8884ceaad76c69d8dab19a5c5366d92510265c5ffe95c263c692",
-      "mode": "byte-identical copy"
-    },
-    {
-      "source": "diagnostics/results/round_components/20261024T233022_874051Z/block0_r1_ancilla_measure_raw.json",
-      "destination": "evidence/previous_component_controls/0d6b5e63657b/block0_r1_ancilla_measure_raw.json",
-      "sha256": "ea00ba236725f2322870834cbd437f0df34862a77472bd9a7576ae5c4d09995d",
-      "mode": "byte-identical copy"
-    },
-    {
-      "source": "diagnostics/results/round_components/20261024T233022_874051Z/block1_r1_ancilla_measure_raw.json",
-      "destination": "evidence/previous_component_controls/0d6b5e63657b/block1_r1_ancilla_measure_raw.json",
-      "sha256": "b9abad6f6c832398c0d58bf6bfe356b0738ff304b4fb9c8099a885ad752c8306",
-      "mode": "byte-identical copy"
-    },
-    {
-      "source": "diagnostics/results/round_components/20261024T233022_874051Z/r1_idle/reference.stim",
-      "destination": "evidence/previous_component_controls/0d6b5e63657b/r1_idle/reference.stim",
-      "sha256": "16c1ac453479da9c6f8b8e3b7331bfe148b19aa9aaafadd6c17d937ca7b51bcf",
-      "mode": "byte-identical copy"
-    },
-    {
-      "source": "diagnostics/results/round_components/20261024T233022_874051Z/r1_idle/model.stim",
-      "destination": "evidence/previous_component_controls/0d6b5e63657b/r1_idle/model.stim",
-      "sha256": "1b65ac713e8363238f18c189905c94dd39d4e29c36ee16f56ebfee5d68cf18ff",
-      "mode": "byte-identical copy"
-    },
-    {
-      "source": "diagnostics/results/round_components/20261024T233022_874051Z/r1_idle/model.dem",
-      "destination": "evidence/previous_component_controls/0d6b5e63657b/r1_idle/model.dem",
-      "sha256": "3b33d65754fa8d1e6362e51f66c27e86b5a4d76fc5c24303fe3d00e2b1fe6448",
-      "mode": "byte-identical copy"
-    },
-    {
-      "source": "diagnostics/results/round_components/20261024T233022_874051Z/r1_idle/block0.npz",
-      "destination": "evidence/previous_component_controls/0d6b5e63657b/r1_idle/block0.npz",
-      "sha256": "251c97a6439d5f4cc8af06ee40f3c54679d2c1dd859c8d8d977e2ba3b7e21da0",
-      "mode": "byte-identical copy"
-    },
-    {
-      "source": "diagnostics/results/round_components/20261024T233022_874051Z/r1_idle/block1.npz",
-      "destination": "evidence/previous_component_controls/0d6b5e63657b/r1_idle/block1.npz",
-      "sha256": "75fcd554159b259e31121d2b3ea6646a8d935e468b3fd7fbf012514c8138f1d4",
-      "mode": "byte-identical copy"
-    },
-    {
-      "source": "diagnostics/results/round_components/20261024T233022_874051Z/r1_cz_echo/reference.stim",
-      "destination": "evidence/previous_component_controls/0d6b5e63657b/r1_cz_echo/reference.stim",
-      "sha256": "f568a8749474f1e72dea96d39c48fab23678d809cf2c1f6b5809d839e42b429d",
-      "mode": "byte-identical copy"
-    },
-    {
-      "source": "diagnostics/results/round_components/20261024T233022_874051Z/r1_cz_echo/model.stim",
-      "destination": "evidence/previous_component_controls/0d6b5e63657b/r1_cz_echo/model.stim",
-      "sha256": "832181eeccbc07d655889d35fc385f65ffced1f3fc063c5c6c83dd732a3101e1",
-      "mode": "byte-identical copy"
-    },
-    {
-      "source": "diagnostics/results/round_components/20261024T233022_874051Z/r1_cz_echo/model.dem",
-      "destination": "evidence/previous_component_controls/0d6b5e63657b/r1_cz_echo/model.dem",
-      "sha256": "3b33d65754fa8d1e6362e51f66c27e86b5a4d76fc5c24303fe3d00e2b1fe6448",
-      "mode": "byte-identical copy"
-    },
-    {
-      "source": "diagnostics/results/round_components/20261024T233022_874051Z/r1_cz_echo/block0.npz",
-      "destination": "evidence/previous_component_controls/0d6b5e63657b/r1_cz_echo/block0.npz",
-      "sha256": "967b0b271fd0f5c3c042e03c98b77c187e3137206eeaec7c23726c28e0a68c07",
-      "mode": "byte-identical copy"
-    },
-    {
-      "source": "diagnostics/results/round_components/20261024T233022_874051Z/r1_cz_echo/block1.npz",
-      "destination": "evidence/previous_component_controls/0d6b5e63657b/r1_cz_echo/block1.npz",
-      "sha256": "9d256b2a041e80b6db75cb88a0b58c76aaaa4499011e5df3190b759f5bf4e676",
-      "mode": "byte-identical copy"
-    },
-    {
-      "source": "diagnostics/results/round_components/20261024T233022_874051Z/r1_ancilla_measure/reference.stim",
-      "destination": "evidence/previous_component_controls/0d6b5e63657b/r1_ancilla_measure/reference.stim",
-      "sha256": "16c1ac453479da9c6f8b8e3b7331bfe148b19aa9aaafadd6c17d937ca7b51bcf",
-      "mode": "byte-identical copy"
-    },
-    {
-      "source": "diagnostics/results/round_components/20261024T233022_874051Z/r1_ancilla_measure/model.stim",
-      "destination": "evidence/previous_component_controls/0d6b5e63657b/r1_ancilla_measure/model.stim",
-      "sha256": "1b65ac713e8363238f18c189905c94dd39d4e29c36ee16f56ebfee5d68cf18ff",
-      "mode": "byte-identical copy"
-    },
-    {
-      "source": "diagnostics/results/round_components/20261024T233022_874051Z/r1_ancilla_measure/model.dem",
-      "destination": "evidence/previous_component_controls/0d6b5e63657b/r1_ancilla_measure/model.dem",
-      "sha256": "3b33d65754fa8d1e6362e51f66c27e86b5a4d76fc5c24303fe3d00e2b1fe6448",
-      "mode": "byte-identical copy"
-    },
-    {
-      "source": "diagnostics/results/round_components/20261024T233022_874051Z/r1_ancilla_measure/block0.npz",
-      "destination": "evidence/previous_component_controls/0d6b5e63657b/r1_ancilla_measure/block0.npz",
-      "sha256": "9c0c278cf17531cc1b2c3f1f4025125e2dc0f333fda90bf73cd0bb6fd48a6e4c",
-      "mode": "byte-identical copy"
-    },
-    {
-      "source": "diagnostics/results/round_components/20261024T233022_874051Z/r1_ancilla_measure/block1.npz",
-      "destination": "evidence/previous_component_controls/0d6b5e63657b/r1_ancilla_measure/block1.npz",
-      "sha256": "343e1ae45a7ade9488b2eab8ecbdafe7db93223d427d57e241c3f7019b0acb08",
-      "mode": "byte-identical copy"
-    },
-    {
-      "source": "diagnostics/results/round_components/20261024T233022_874051Z/r3/reference.stim",
-      "destination": "evidence/previous_component_controls/0d6b5e63657b/r3/reference.stim",
-      "sha256": "788e9bce9856478199df02e53f01f32ffaa4167e991f7dc5ccd13ed6e0ca3ca9",
-      "mode": "byte-identical copy"
-    },
-    {
-      "source": "diagnostics/results/round_components/20261024T233022_874051Z/r3/model.stim",
-      "destination": "evidence/previous_component_controls/0d6b5e63657b/r3/model.stim",
-      "sha256": "f244a8135b0ce70fd0f504fb92c7eea7d96c13a7be6de053519a251d7377ec9d",
-      "mode": "byte-identical copy"
-    },
-    {
-      "source": "diagnostics/results/round_components/20261024T233022_874051Z/r3/model.dem",
-      "destination": "evidence/previous_component_controls/0d6b5e63657b/r3/model.dem",
-      "sha256": "735a83b70b3cc935851e51be2f95f500d6b4f1b9d6b4e848010965607160dcea",
-      "mode": "byte-identical copy"
-    },
-    {
-      "source": "diagnostics/results/round_components/20261024T233022_874051Z/r3/block0.npz",
-      "destination": "evidence/previous_component_controls/0d6b5e63657b/r3/block0.npz",
-      "sha256": "3044e3f6d73bc53ff67863d1a858600944c4720736f15c3fe172833c62168116",
-      "mode": "byte-identical copy"
-    },
-    {
-      "source": "diagnostics/results/round_components/20261024T233022_874051Z/r3/block1.npz",
-      "destination": "evidence/previous_component_controls/0d6b5e63657b/r3/block1.npz",
-      "sha256": "8bdb05da0c207b28236d4ebb382da4e9a910893e57348ba6ba47147ecbb7b152",
-      "mode": "byte-identical copy"
     },
     {
       "source": "diagnostics/compare_round_components.py",
@@ -1102,18 +922,6 @@
       "mode": "byte-identical copy"
     },
     {
-      "source": "/Users/soonprinceton/Projects/DuQuantum-IQM-Challenge-2026/diagnostics/results/round_components/20261024T233022_874051Z/plan.json",
-      "destination": "data/component_controls/acquisition_sets/original/plan.json",
-      "sha256": "0d6b5e63657b92ef43dfaa2fdd1ea5f8441afcf0f0e6314463af8abf3ab504d8",
-      "mode": "byte-identical copy"
-    },
-    {
-      "source": "/Users/soonprinceton/Projects/DuQuantum-IQM-Challenge-2026/diagnostics/results/round_components/20261024T233022_874051Z/results.json",
-      "destination": "data/component_controls/acquisition_sets/original/results.json",
-      "sha256": "7059cf37754b73b5a734c655e303a04b019f532e17cabd43a709bdc5090ce084",
-      "mode": "byte-identical copy"
-    },
-    {
       "source": "/Users/soonprinceton/Projects/DuQuantum-IQM-Challenge-2026/diagnostics/results/round_components/20261024T233022_874051Z/block0_job.json",
       "destination": "data/component_controls/acquisition_sets/original/block0_job.json",
       "sha256": "be2c872c28a41e4f454aa7d95ccc39e514db3d397420523d85c24bf0d0a10035",
@@ -1163,6 +971,25 @@
       "mode": "measured-data aggregation",
       "changes": [
         "Combine the three actual rerun summaries with the unchanged historical r3; per-arm acquisition provenance is explicit."
+      ]
+    },
+    {
+      "source": "diagnostics/archives/experiment_results_cleanup/20261025T030154_613289Z/data/source_patch/plan.json",
+      "destination": "data/source_patch/plan.json",
+      "mode": "extracted native reference recipe",
+      "changes": [
+        "Keep one-round and three-round native reference inputs only; remove old scan arms, delays and unrelated execution metadata."
+      ]
+    },
+    {
+      "source": [
+        "diagnostics/archives/experiment_results_cleanup/20261025T030154_613289Z/data/component_controls/acquisition_sets/original/plan.json",
+        "diagnostics/archives/experiment_results_cleanup/20261025T030154_613289Z/data/component_controls/acquisition_sets/original/results.json"
+      ],
+      "destination": "data/component_controls/acquisition_sets/original/r3_reference_metadata.json",
+      "mode": "metadata excerpt",
+      "changes": [
+        "Keep only the historical r3 calibration, mapping, shots, decoder setting, result summary and job identities."
       ]
     }
   ],
@@ -1406,7 +1233,7 @@
         "r3"
       ],
       "historical_r3_reused": true,
-      "previous_comparison_archive": "evidence/previous_component_controls/0d6b5e63657b"
+      "previous_comparison_in_diagnostics": "diagnostics/archives/experiment_results_cleanup/20261025T030154_613289Z/evidence/previous_component_controls"
     }
   },
   "component_recipe_ast_check": {
@@ -1414,5 +1241,12 @@
     "function": "make_arms",
     "only_executable_change": "Omit fifth legacy zero-round arm",
     "verified": true
-  }
+  },
+  "excluded_previous_material": {
+    "diagnostics_archive": "diagnostics/archives/experiment_results_cleanup/20261025T030154_613289Z",
+    "removed_files": 43,
+    "archive_manifest_sha256": "8b6be0a7995d4765defcb27c34fbbc03000bc26f1e0c035c3482de4c2cde1038",
+    "scope": "Superseded component comparison, obsolete full acquisition metadata, old reports, duplicate plot and generated cache files; all retained in diagnostics."
+  },
+  "curation_note": "Only experiments supporting the current report are included; superseded exports and duplicate artifacts are kept in diagnostics, not required at runtime."
 }

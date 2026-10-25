@@ -176,7 +176,7 @@ def analyze_controls(root, output, edges, calibration_id, wilson):
     running = 0.
     for i, c in enumerate(sorted(contrasts, key=lambda c:c['fisher_p'])):
         running = max(running, min(1., (len(contrasts)-i)*c['fisher_p'])); c['holm_p_3_contrasts'] = running
-    report = dict(arms=list(ARM_NAMES), shots=sum(s['shots'] for s in summaries), source_archived_arm_excluded='r0_idle',
+    report = dict(arms=list(ARM_NAMES), shots=sum(s['shots'] for s in summaries),
         details=details, contrasts=contrasts, original_primary_decoder_preserved=True, three_one_round_dems_identical=True,
         auxiliary_measurements_preserved_but_excluded_from_decoder=True, fixed_patch_recipe_reproduced=True,
         timing_scope=f'First complete syndrome record to final readout barrier, target {target/1000:g} us; first three arms rerun, r3 is historical; NOT a common independent encoding boundary' if record_mode else 'Full local schedules ~410.872 us, NOT the 15 us memory benchmark; no isolated memory-window duration was archived',
@@ -202,7 +202,7 @@ def analyze_controls(root, output, edges, calibration_id, wilson):
         '- All three one-round controls have the identical primary DEM; three rounds use their own full-history DEM.',
         '- Matching uses the first complete syndrome record, not a common independently encoded-state barrier. The reused three-round measurements come from earlier jobs; drift is a confound.' if record_mode else '- Full schedule durations, including initialization/readout, differ by at most 4 ns. Operation additions replace waiting; the contrast measures their net effect, not isolated error per gate.',
         '- These interventions do not reproduce the full gate/measurement/basis-rotation sequence of repeated extraction, so the gap cannot be uniquely attributed to CZ or measurement alone.',
-        '- Historical metadata remain archived, including the unused original unencoded r0 entry. That entry is excluded from the analysis.',
+        '- Only the latest three one-round measurements and the required historical three-round reference are retained here. Superseded trials remain in diagnostics.',
         '- A record-availability timestamp is not a separately established logical-state preparation boundary. Server timestamps and full waveforms remain unavailable.' if record_mode else '- Missing isolated memory-boundary timings are blank in timing.csv; they are not inferred by subtracting an assumed reset time. Server timestamps and full waveforms remain unavailable.']
     (output/'COMPONENT_CONTROLS.md').write_text('\n'.join(lines)+'\n')
     plot_controls(summaries, contrasts, output/'plots/component_controls.png', record_mode)

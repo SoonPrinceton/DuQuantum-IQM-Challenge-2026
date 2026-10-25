@@ -139,7 +139,6 @@
       "r3"
     ],
     "shots": 8000,
-    "source_archived_arm_excluded": "r0_idle",
     "details": {
       "r1_idle": {
         "blocks": [

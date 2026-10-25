@@ -1,7 +1,7 @@
 {
   "unchanged_original_diagnostics_files": 725,
   "source_function_bodies_preserved": 38,
-  "original_copied_data_files": 177,
+  "original_copied_data_files": 145,
   "source_copy_hashes_match": true,
   "no_diagnostics_import_dependency": true,
   "no_credentials_or_cache_files_copied": true,
@@ -14,5 +14,9 @@
   "component_auxiliary_readouts_preserved": true,
   "component_record_window_rerun_imported": true,
   "historical_r3_unchanged": true,
-  "previous_component_data_archived": true
+  "previous_component_data_archived": true,
+  "superseded_experiment_exports_removed": true,
+  "removed_material_retained_in_diagnostics": "diagnostics/archives/experiment_results_cleanup/20261025T030154_613289Z",
+  "report_tex_and_pdf_unchanged_by_cleanup": true,
+  "current_measured_data_files_unchanged": 92
 }

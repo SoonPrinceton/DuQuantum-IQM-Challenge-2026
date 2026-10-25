@@ -25,5 +25,5 @@ First complete syndrome record to final readout barrier, target 5.348 us; first 
 - All three one-round controls have the identical primary DEM; three rounds use their own full-history DEM.
 - Matching uses the first complete syndrome record, not a common independently encoded-state barrier. The reused three-round measurements come from earlier jobs; drift is a confound.
 - These interventions do not reproduce the full gate/measurement/basis-rotation sequence of repeated extraction, so the gap cannot be uniquely attributed to CZ or measurement alone.
-- Historical metadata remain archived, including the unused original unencoded r0 entry. That entry is excluded from the analysis.
+- Only the latest three one-round measurements and the required historical three-round reference are retained here. Superseded trials remain in diagnostics.
 - A record-availability timestamp is not a separately established logical-state preparation boundary. Server timestamps and full waveforms remain unavailable.

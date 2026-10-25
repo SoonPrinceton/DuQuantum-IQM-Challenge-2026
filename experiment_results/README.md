@@ -5,8 +5,8 @@ states, no-reset syndrome extraction, a fixed zero-routing-overhead patch,
 IQM native hardware execution and PyMatching MWPM decoding.
 
 This self-contained submission contains **18 measured configurations, 2000 shots
-each (36,000 shots)**. Archived measurements and metadata are byte-identical to
-the originals. No new experiments or hardware jobs were run to prepare it.
+each (36,000 shots)**. Measured shot arrays are retained byte-for-byte;
+metadata excerpts and combined summaries are documented in `PROVENANCE.json`. No new experiments or hardware jobs were run to prepare it.
 
 ## Reproduce offline
 
@@ -27,7 +27,7 @@ prediction, checks counts/intervals/mapping/timing, and generates:
 - `RESULTS.md`, `validation.json`
 
 The script never changes `data/`. Use `--output-dir PATH` for alternative derived
-output. `plots/memory_15us_original.png` preserves the original archived plot.
+output. Only the current result plots are included.
 
 ## Experimental results
 
@@ -71,7 +71,7 @@ drift prevent a unique physical diagnosis or a precise coherence-time fit.
 The three one-round arms were remeasured with shorter padding, matching the historical three-round **first complete syndrome record → final data-readout barrier** interval to approximately 5.348 μs.
 The three-round measurement data are reused, not remeasured. These are different acquisitions; shared calibration does not eliminate drift.
 **This is record-window matching, not a verified common independent encoded-state preparation boundary.** The three-round circuit is pipelined.
-The previous full-schedule-matched data are preserved under `evidence/previous_component_controls/`. Full original metadata for both acquisitions are in `data/component_controls/acquisition_sets/`.
+Superseded full-schedule comparison data and old report versions are kept only in `diagnostics/`. The current one-round acquisition metadata and the necessary historical three-round reference metadata are retained in `data/component_controls/acquisition_sets/`.
 See [COMPONENT_CONTROLS.md](COMPONENT_CONTROLS.md) for confidence intervals, timing and contrasts.
 
 ## Implementation and evidence
@@ -99,8 +99,8 @@ See [COMPONENT_CONTROLS.md](COMPONENT_CONTROLS.md) for confidence intervals, tim
 | `code/` | Stim/no-reset core, geometry, benchmark and diagnostic execution, offline analysis |
 | `data/memory_15us/` | Ten configurations: X/Z, 0–3 rounds, single-qubit baselines |
 | `data/memory_near_zero/`, `data/memory_5us/` | Two encoded zero-round configurations each |
-| `data/component_controls/` | Four requested earlier Z-memory component controls |
-| `data/source_patch/` | Original layout-input plan and calibration architecture |
+| `data/component_controls/` | Latest three one-round controls and the historical three-round reference |
+| `data/source_patch/` | Fixed native reference recipes and calibration architecture |
 | `evidence/` | Historical zero-SWAP and 5/15 μs X-memory audit records |
 | `tables/`, `plots/` | Derived tables and figures |
 | `PROVENANCE.json` | Original source paths, copied-file hashes and code-copy changes |
@@ -109,9 +109,9 @@ Per-arm archives include raw measurement matrices, detector events, logical
 flips and predictions (`block*.npz`), Stim circuits, DEMs and native instructions.
 Duplicate raw JSON, debug/mock outputs and exploratory searches are omitted.
 Original absolute metadata paths remain as provenance; runtime paths are local.
-Component acquisition metadata are preserved separately per source. The old unused unencoded zero-round entry remains only in historical provenance and is excluded from analyses.
+Only metadata needed for the current acquisitions and the retained three-round reference are included. Full earlier trials remain in `diagnostics/`.
 
 For implementation details and optional future hardware execution, see
 **[METHODS.md](METHODS.md)**. Hardware dependencies are separate in
 `requirements-hardware.txt`; only explicit `--hardware` submits jobs. Credentials
-are not included. The original project and `diagnostics/` remain unchanged.
+are not included. Original measured data remain in `diagnostics/`; removed export copies are archived there as well.

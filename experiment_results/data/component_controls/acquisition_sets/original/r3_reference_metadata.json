@@ -1,0 +1,63 @@
+{
+  "format": "historical_r3_reference_metadata_excerpt_v1",
+  "device": "emerald",
+  "calibration_set_id": "23e12f6b-c23c-4736-8736-b0142989c0e6",
+  "layout": {
+    "14": "QB3",
+    "2": "QB2",
+    "9": "QB5",
+    "11": "QB12",
+    "16": "QB10",
+    "25": "QB26",
+    "18": "QB19",
+    "13": "QB21",
+    "3": "QB6",
+    "15": "QB9",
+    "19": "QB27",
+    "1": "QB1",
+    "8": "QB4",
+    "17": "QB18",
+    "5": "QB13",
+    "10": "QB11",
+    "12": "QB20"
+  },
+  "arm": "r3",
+  "rounds": 3,
+  "shots_per_block": 1000,
+  "blocks": 2,
+  "correlated": false,
+  "measured_summary": {
+    "shots": 2000,
+    "failures": 651,
+    "raw_flips": 834,
+    "decoder": "PyMatching",
+    "p_error": 0.3255,
+    "wilson95": [
+      0.30531626073663215,
+      0.3463527887645251
+    ],
+    "raw_probability": 0.417
+  },
+  "jobs": [
+    {
+      "block": 0,
+      "job_id": "01a17041-62a1-778f-9e58-9c40ba51bb23",
+      "circuit_index": 3
+    },
+    {
+      "block": 1,
+      "job_id": "01a17041-8b1c-746f-b71e-91cecab3622e",
+      "circuit_index": 2
+    }
+  ],
+  "source_plan_sha256": "0d6b5e63657b92ef43dfaa2fdd1ea5f8441afcf0f0e6314463af8abf3ab504d8",
+  "source_results_sha256": "7059cf37754b73b5a734c655e303a04b019f532e17cabd43a709bdc5090ce084",
+  "source_archive_in_diagnostics": "diagnostics/archives/experiment_results_cleanup/20261025T030154_613289Z",
+  "measurement_files": {
+    "data/component_controls/r3/block1.npz": "8bdb05da0c207b28236d4ebb382da4e9a910893e57348ba6ba47147ecbb7b152",
+    "data/component_controls/r3/block0.npz": "3044e3f6d73bc53ff67863d1a858600944c4720736f15c3fe172833c62168116",
+    "data/component_controls/r3/model.stim": "f244a8135b0ce70fd0f504fb92c7eea7d96c13a7be6de053519a251d7377ec9d",
+    "data/component_controls/r3/model.dem": "735a83b70b3cc935851e51be2f95f500d6b4f1b9d6b4e848010965607160dcea",
+    "data/component_controls/r3/reference.stim": "788e9bce9856478199df02e53f01f32ffaa4167e991f7dc5ccd13ed6e0ca3ca9"
+  }
+}

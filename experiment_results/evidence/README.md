@@ -18,11 +18,12 @@
 the submission's direct no-routing construction and saved native CZ topology,
 and verifies the saved X-memory 5/15 μs idle-only input difference.
 
-The four earlier component controls are reconstructed from the saved fixed-patch
-source plus their explicit CZ-echo/ancilla-readout interventions. Their shared
-one-round DEM, named auxiliary measurement records, original MWPM predictions
-and full-schedule timing records are checked separately. They are not redefined
-as the later 15 μs common-encoder benchmark.
+The current component comparison retains the three remeasured one-round controls
+and their historical three-round reference. Shared one-round DEMs, auxiliary
+measurement records and original MWPM predictions are checked separately.
+Matching uses the first-complete-record interval, not a common independent
+encoding boundary or the 15 μs common-encoder benchmark. Superseded full-schedule
+comparison exports are retained only in diagnostics.
 
 Full pulse instructions/waveforms, server schedules and historical controller
 settings are missing. They have not been fabricated or inferred from gate counts.

@@ -35,8 +35,7 @@ count, and writes only derived outputs:
 
 To write derived outputs elsewhere, use
 `python code/reproduce_analysis.py --output-dir /path/to/output`.
-The script never modifies `data/`. `plots/memory_15us_original.png` is the original
-archived plot; the other two plots are reproducible views of the same measurements.
+The script never modifies `data/`. The plots are reproducible views of the retained measurements.
 
 ## Experiment and timing definition
 
@@ -145,7 +144,7 @@ data/
   memory_15us/            Ten measured configurations
   memory_near_zero/       Two encoded zero-round configurations
   memory_5us/             Two encoded zero-round configurations
-  source_patch/           Original layout-input plan and calibration architecture
+  source_patch/           Fixed native reference recipes and calibration architecture
   component_controls/     Four earlier full-schedule-matched Z-memory controls
 evidence/                 Archived timing audit and historical zero-SWAP evidence
 tables/                   Derived JSON/CSV
@@ -187,7 +186,7 @@ for timed idle. A per-round probability must not be interpreted as a per-μs
 rate. No pulse implementation is modified.
 
 Source acknowledgements and exact extraction details are in `PROVENANCE.json`.
-The original project and `diagnostics/` remain unchanged.
+Original measured data remain in `diagnostics/`; removed export copies are archived there as well.
 
 ## Updated component comparison
 
@@ -201,5 +200,5 @@ The original project and `diagnostics/` remain unchanged.
 The three one-round arms were remeasured with shorter padding, matching the historical three-round **first complete syndrome record → final data-readout barrier** interval to approximately 5.348 μs.
 The three-round measurement data are reused, not remeasured. These are different acquisitions; shared calibration does not eliminate drift.
 **This is record-window matching, not a verified common independent encoded-state preparation boundary.** The three-round circuit is pipelined.
-The previous full-schedule-matched data are preserved under `evidence/previous_component_controls/`. Full original metadata for both acquisitions are in `data/component_controls/acquisition_sets/`.
+Superseded full-schedule comparison data and old report versions are kept only in `diagnostics/`. The current one-round acquisition metadata and the necessary historical three-round reference metadata are retained in `data/component_controls/acquisition_sets/`.
 See [COMPONENT_CONTROLS.md](COMPONENT_CONTROLS.md) for confidence intervals, timing and contrasts.

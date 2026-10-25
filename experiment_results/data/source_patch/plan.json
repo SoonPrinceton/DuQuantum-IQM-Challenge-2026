@@ -1,6 +1,6 @@
 {
+  "format": "fixed_patch_native_recipe_v1",
   "metadata": {
-    "hardware": true,
     "device": "emerald",
     "calibration_set_id": "23e12f6b-c23c-4736-8736-b0142989c0e6",
     "layout": {
@@ -21,27 +21,726 @@
       "5": "QB13",
       "10": "QB11",
       "12": "QB20"
-    },
-    "shots_per_arm_per_block": 1000,
-    "blocks": 2,
-    "correlated": false,
-    "noise": {
-      "after_clifford_depolarization": 0.003,
-      "before_measure_flip_probability": 0.003,
-      "before_round_data_depolarization": 0.003,
-      "after_reset_flip_probability": 0.003
-    },
-    "idle_error_per_us": 0.0,
-    "timing_basis": "exploratory_padding_scan_not_time_matched",
-    "timing_info": null,
-    "physical_equal_time_server_verified": false,
-    "note": "Delay is a minimum; server scheduling and quantization can add time. A padding scan alone cannot establish equal storage time."
+    }
   },
   "arms": [
     {
-      "name": "r3_padding0ns",
+      "name": "r1_native_reference",
+      "rounds": 1,
+      "instructions": [
+        {
+          "name": "prx",
+          "locus": [
+            "QB3"
+          ],
+          "args": {
+            "angle": 1.5707963267948966,
+            "phase": 4.71238898038469
+          }
+        },
+        {
+          "name": "prx",
+          "locus": [
+            "QB19"
+          ],
+          "args": {
+            "angle": 1.5707963267948966,
+            "phase": 4.71238898038469
+          }
+        },
+        {
+          "name": "prx",
+          "locus": [
+            "QB2"
+          ],
+          "args": {
+            "angle": 1.5707963267949,
+            "phase": 4.712388980384693
+          }
+        },
+        {
+          "name": "prx",
+          "locus": [
+            "QB6"
+          ],
+          "args": {
+            "angle": 1.5707963267948966,
+            "phase": 4.71238898038469
+          }
+        },
+        {
+          "name": "cz",
+          "locus": [
+            "QB2",
+            "QB6"
+          ],
+          "args": {}
+        },
+        {
+          "name": "prx",
+          "locus": [
+            "QB10"
+          ],
+          "args": {
+            "angle": 1.5707963267949,
+            "phase": 4.712388980384693
+          }
+        },
+        {
+          "name": "prx",
+          "locus": [
+            "QB9"
+          ],
+          "args": {
+            "angle": 1.5707963267948966,
+            "phase": 4.71238898038469
+          }
+        },
+        {
+          "name": "cz",
+          "locus": [
+            "QB10",
+            "QB9"
+          ],
+          "args": {}
+        },
+        {
+          "name": "prx",
+          "locus": [
+            "QB26"
+          ],
+          "args": {
+            "angle": 1.5707963267949,
+            "phase": 4.712388980384693
+          }
+        },
+        {
+          "name": "prx",
+          "locus": [
+            "QB27"
+          ],
+          "args": {
+            "angle": 1.5707963267948966,
+            "phase": 4.71238898038469
+          }
+        },
+        {
+          "name": "cz",
+          "locus": [
+            "QB26",
+            "QB27"
+          ],
+          "args": {}
+        },
+        {
+          "name": "prx",
+          "locus": [
+            "QB6"
+          ],
+          "args": {
+            "angle": 1.5707963267948966,
+            "phase": 1.5707963267948966
+          }
+        },
+        {
+          "name": "prx",
+          "locus": [
+            "QB5"
+          ],
+          "args": {
+            "angle": 1.5707963267948966,
+            "phase": 4.71238898038469
+          }
+        },
+        {
+          "name": "cz",
+          "locus": [
+            "QB6",
+            "QB5"
+          ],
+          "args": {}
+        },
+        {
+          "name": "prx",
+          "locus": [
+            "QB1"
+          ],
+          "args": {
+            "angle": 1.5707963267948966,
+            "phase": 4.71238898038469
+          }
+        },
+        {
+          "name": "cz",
+          "locus": [
+            "QB2",
+            "QB1"
+          ],
+          "args": {}
+        },
+        {
+          "name": "prx",
+          "locus": [
+            "QB3"
+          ],
+          "args": {
+            "angle": 1.5707963267948966,
+            "phase": 1.5707963267948966
+          }
+        },
+        {
+          "name": "measure",
+          "locus": [
+            "QB3"
+          ],
+          "args": {
+            "key": "m_004"
+          }
+        },
+        {
+          "name": "prx",
+          "locus": [
+            "QB18"
+          ],
+          "args": {
+            "angle": 1.5707963267948966,
+            "phase": 4.71238898038469
+          }
+        },
+        {
+          "name": "cz",
+          "locus": [
+            "QB10",
+            "QB18"
+          ],
+          "args": {}
+        },
+        {
+          "name": "prx",
+          "locus": [
+            "QB12"
+          ],
+          "args": {
+            "angle": 1.5707963267949,
+            "phase": 4.712388980384693
+          }
+        },
+        {
+          "name": "prx",
+          "locus": [
+            "QB6"
+          ],
+          "args": {
+            "angle": 1.5707963267948966,
+            "phase": 4.71238898038469
+          }
+        },
+        {
+          "name": "cz",
+          "locus": [
+            "QB12",
+            "QB6"
+          ],
+          "args": {}
+        },
+        {
+          "name": "prx",
+          "locus": [
+            "QB18"
+          ],
+          "args": {
+            "angle": 1.5707963267948966,
+            "phase": 1.5707963267948966
+          }
+        },
+        {
+          "name": "cz",
+          "locus": [
+            "QB18",
+            "QB19"
+          ],
+          "args": {}
+        },
+        {
+          "name": "prx",
+          "locus": [
+            "QB13"
+          ],
+          "args": {
+            "angle": 1.5707963267948966,
+            "phase": 4.71238898038469
+          }
+        },
+        {
+          "name": "cz",
+          "locus": [
+            "QB12",
+            "QB13"
+          ],
+          "args": {}
+        },
+        {
+          "name": "prx",
+          "locus": [
+            "QB2"
+          ],
+          "args": {
+            "angle": 1.5707963267949,
+            "phase": 1.5707963267949028
+          }
+        },
+        {
+          "name": "measure",
+          "locus": [
+            "QB2"
+          ],
+          "args": {
+            "key": "m_000"
+          }
+        },
+        {
+          "name": "prx",
+          "locus": [
+            "QB18"
+          ],
+          "args": {
+            "angle": 1.5707963267948966,
+            "phase": 4.71238898038469
+          }
+        },
+        {
+          "name": "cz",
+          "locus": [
+            "QB26",
+            "QB18"
+          ],
+          "args": {}
+        },
+        {
+          "name": "prx",
+          "locus": [
+            "QB11"
+          ],
+          "args": {
+            "angle": 1.5707963267948966,
+            "phase": 4.71238898038469
+          }
+        },
+        {
+          "name": "cz",
+          "locus": [
+            "QB12",
+            "QB11"
+          ],
+          "args": {}
+        },
+        {
+          "name": "prx",
+          "locus": [
+            "QB4"
+          ],
+          "args": {
+            "angle": 1.5707963267948966,
+            "phase": 4.71238898038469
+          }
+        },
+        {
+          "name": "cz",
+          "locus": [
+            "QB10",
+            "QB4"
+          ],
+          "args": {}
+        },
+        {
+          "name": "prx",
+          "locus": [
+            "QB1"
+          ],
+          "args": {
+            "angle": 1.5707963267948966,
+            "phase": 1.5707963267948966
+          }
+        },
+        {
+          "name": "cz",
+          "locus": [
+            "QB1",
+            "QB5"
+          ],
+          "args": {}
+        },
+        {
+          "name": "prx",
+          "locus": [
+            "QB20"
+          ],
+          "args": {
+            "angle": 1.5707963267948966,
+            "phase": 4.71238898038469
+          }
+        },
+        {
+          "name": "cz",
+          "locus": [
+            "QB12",
+            "QB20"
+          ],
+          "args": {}
+        },
+        {
+          "name": "cz",
+          "locus": [
+            "QB10",
+            "QB11"
+          ],
+          "args": {}
+        },
+        {
+          "name": "prx",
+          "locus": [
+            "QB5"
+          ],
+          "args": {
+            "angle": 1.5707963267948966,
+            "phase": 1.5707963267948966
+          }
+        },
+        {
+          "name": "measure",
+          "locus": [
+            "QB5"
+          ],
+          "args": {
+            "key": "m_001"
+          }
+        },
+        {
+          "name": "prx",
+          "locus": [
+            "QB26"
+          ],
+          "args": {
+            "angle": 1.5707963267949,
+            "phase": 1.5707963267949028
+          }
+        },
+        {
+          "name": "measure",
+          "locus": [
+            "QB26"
+          ],
+          "args": {
+            "key": "m_007"
+          }
+        },
+        {
+          "name": "prx",
+          "locus": [
+            "QB20"
+          ],
+          "args": {
+            "angle": 1.5707963267948966,
+            "phase": 1.5707963267948966
+          }
+        },
+        {
+          "name": "prx",
+          "locus": [
+            "QB21"
+          ],
+          "args": {
+            "angle": 1.5707963267948966,
+            "phase": 4.71238898038469
+          }
+        },
+        {
+          "name": "cz",
+          "locus": [
+            "QB20",
+            "QB21"
+          ],
+          "args": {}
+        },
+        {
+          "name": "cz",
+          "locus": [
+            "QB20",
+            "QB19"
+          ],
+          "args": {}
+        },
+        {
+          "name": "prx",
+          "locus": [
+            "QB13"
+          ],
+          "args": {
+            "angle": 1.5707963267948966,
+            "phase": 1.5707963267948966
+          }
+        },
+        {
+          "name": "cz",
+          "locus": [
+            "QB13",
+            "QB21"
+          ],
+          "args": {}
+        },
+        {
+          "name": "prx",
+          "locus": [
+            "QB12"
+          ],
+          "args": {
+            "angle": 1.5707963267949,
+            "phase": 1.5707963267949028
+          }
+        },
+        {
+          "name": "measure",
+          "locus": [
+            "QB12"
+          ],
+          "args": {
+            "key": "m_002"
+          }
+        },
+        {
+          "name": "prx",
+          "locus": [
+            "QB10"
+          ],
+          "args": {
+            "angle": 1.5707963267949,
+            "phase": 1.5707963267949028
+          }
+        },
+        {
+          "name": "measure",
+          "locus": [
+            "QB10"
+          ],
+          "args": {
+            "key": "m_005"
+          }
+        },
+        {
+          "name": "prx",
+          "locus": [
+            "QB11"
+          ],
+          "args": {
+            "angle": 1.5707963267948966,
+            "phase": 1.5707963267948966
+          }
+        },
+        {
+          "name": "cz",
+          "locus": [
+            "QB11",
+            "QB19"
+          ],
+          "args": {}
+        },
+        {
+          "name": "prx",
+          "locus": [
+            "QB21"
+          ],
+          "args": {
+            "angle": 1.5707963267948966,
+            "phase": 1.5707963267948966
+          }
+        },
+        {
+          "name": "measure",
+          "locus": [
+            "QB21"
+          ],
+          "args": {
+            "key": "m_003"
+          }
+        },
+        {
+          "name": "prx",
+          "locus": [
+            "QB19"
+          ],
+          "args": {
+            "angle": 1.5707963267948966,
+            "phase": 1.5707963267948966
+          }
+        },
+        {
+          "name": "measure",
+          "locus": [
+            "QB19"
+          ],
+          "args": {
+            "key": "m_006"
+          }
+        },
+        {
+          "name": "prx",
+          "locus": [
+            "QB6"
+          ],
+          "args": {
+            "angle": 1.5707963267948966,
+            "phase": 1.5707963267948966
+          }
+        },
+        {
+          "name": "prx",
+          "locus": [
+            "QB4"
+          ],
+          "args": {
+            "angle": 1.5707963267948966,
+            "phase": 1.5707963267948966
+          }
+        },
+        {
+          "name": "prx",
+          "locus": [
+            "QB9"
+          ],
+          "args": {
+            "angle": 1.5707963267948966,
+            "phase": 1.5707963267948966
+          }
+        },
+        {
+          "name": "prx",
+          "locus": [
+            "QB18"
+          ],
+          "args": {
+            "angle": 1.5707963267948966,
+            "phase": 1.5707963267948966
+          }
+        },
+        {
+          "name": "prx",
+          "locus": [
+            "QB27"
+          ],
+          "args": {
+            "angle": 1.5707963267948966,
+            "phase": 1.5707963267948966
+          }
+        },
+        {
+          "name": "barrier",
+          "locus": [
+            "QB1",
+            "QB2",
+            "QB6",
+            "QB13",
+            "QB4",
+            "QB5",
+            "QB11",
+            "QB12",
+            "QB20",
+            "QB21",
+            "QB3",
+            "QB9",
+            "QB10",
+            "QB18",
+            "QB19",
+            "QB27",
+            "QB26"
+          ],
+          "args": {}
+        },
+        {
+          "name": "measure",
+          "locus": [
+            "QB1"
+          ],
+          "args": {
+            "key": "m_008"
+          }
+        },
+        {
+          "name": "measure",
+          "locus": [
+            "QB6"
+          ],
+          "args": {
+            "key": "m_009"
+          }
+        },
+        {
+          "name": "measure",
+          "locus": [
+            "QB13"
+          ],
+          "args": {
+            "key": "m_010"
+          }
+        },
+        {
+          "name": "measure",
+          "locus": [
+            "QB4"
+          ],
+          "args": {
+            "key": "m_011"
+          }
+        },
+        {
+          "name": "measure",
+          "locus": [
+            "QB11"
+          ],
+          "args": {
+            "key": "m_012"
+          }
+        },
+        {
+          "name": "measure",
+          "locus": [
+            "QB20"
+          ],
+          "args": {
+            "key": "m_013"
+          }
+        },
+        {
+          "name": "measure",
+          "locus": [
+            "QB9"
+          ],
+          "args": {
+            "key": "m_014"
+          }
+        },
+        {
+          "name": "measure",
+          "locus": [
+            "QB18"
+          ],
+          "args": {
+            "key": "m_015"
+          }
+        },
+        {
+          "name": "measure",
+          "locus": [
+            "QB27"
+          ],
+          "args": {
+            "key": "m_016"
+          }
+        }
+      ]
+    },
+    {
+      "name": "r3_native_reference",
       "rounds": 3,
-      "padding_ns": 0.0,
       "instructions": [
         {
           "name": "prx",
@@ -1959,2323 +2658,9 @@
             "key": "m_032"
           }
         }
-      ],
-      "operation_counts": {
-        "prx": 106,
-        "cz": 67,
-        "measure": 33,
-        "barrier": 1
-      }
-    },
-    {
-      "name": "r1_padding2000ns",
-      "rounds": 1,
-      "padding_ns": 2000.0,
-      "instructions": [
-        {
-          "name": "prx",
-          "locus": [
-            "QB3"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 4.71238898038469
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB19"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 4.71238898038469
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB2"
-          ],
-          "args": {
-            "angle": 1.5707963267949,
-            "phase": 4.712388980384693
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB6"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 4.71238898038469
-          }
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB2",
-            "QB6"
-          ],
-          "args": {}
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB10"
-          ],
-          "args": {
-            "angle": 1.5707963267949,
-            "phase": 4.712388980384693
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB9"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 4.71238898038469
-          }
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB10",
-            "QB9"
-          ],
-          "args": {}
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB26"
-          ],
-          "args": {
-            "angle": 1.5707963267949,
-            "phase": 4.712388980384693
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB27"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 4.71238898038469
-          }
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB26",
-            "QB27"
-          ],
-          "args": {}
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB6"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 1.5707963267948966
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB5"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 4.71238898038469
-          }
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB6",
-            "QB5"
-          ],
-          "args": {}
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB1"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 4.71238898038469
-          }
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB2",
-            "QB1"
-          ],
-          "args": {}
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB3"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 1.5707963267948966
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB3"
-          ],
-          "args": {
-            "key": "m_004"
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB18"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 4.71238898038469
-          }
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB10",
-            "QB18"
-          ],
-          "args": {}
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB12"
-          ],
-          "args": {
-            "angle": 1.5707963267949,
-            "phase": 4.712388980384693
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB6"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 4.71238898038469
-          }
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB12",
-            "QB6"
-          ],
-          "args": {}
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB18"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 1.5707963267948966
-          }
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB18",
-            "QB19"
-          ],
-          "args": {}
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB13"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 4.71238898038469
-          }
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB12",
-            "QB13"
-          ],
-          "args": {}
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB2"
-          ],
-          "args": {
-            "angle": 1.5707963267949,
-            "phase": 1.5707963267949028
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB2"
-          ],
-          "args": {
-            "key": "m_000"
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB18"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 4.71238898038469
-          }
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB26",
-            "QB18"
-          ],
-          "args": {}
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB11"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 4.71238898038469
-          }
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB12",
-            "QB11"
-          ],
-          "args": {}
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB4"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 4.71238898038469
-          }
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB10",
-            "QB4"
-          ],
-          "args": {}
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB1"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 1.5707963267948966
-          }
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB1",
-            "QB5"
-          ],
-          "args": {}
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB20"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 4.71238898038469
-          }
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB12",
-            "QB20"
-          ],
-          "args": {}
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB10",
-            "QB11"
-          ],
-          "args": {}
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB5"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 1.5707963267948966
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB5"
-          ],
-          "args": {
-            "key": "m_001"
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB26"
-          ],
-          "args": {
-            "angle": 1.5707963267949,
-            "phase": 1.5707963267949028
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB26"
-          ],
-          "args": {
-            "key": "m_007"
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB20"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 1.5707963267948966
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB21"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 4.71238898038469
-          }
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB20",
-            "QB21"
-          ],
-          "args": {}
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB20",
-            "QB19"
-          ],
-          "args": {}
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB13"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 1.5707963267948966
-          }
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB13",
-            "QB21"
-          ],
-          "args": {}
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB12"
-          ],
-          "args": {
-            "angle": 1.5707963267949,
-            "phase": 1.5707963267949028
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB12"
-          ],
-          "args": {
-            "key": "m_002"
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB10"
-          ],
-          "args": {
-            "angle": 1.5707963267949,
-            "phase": 1.5707963267949028
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB10"
-          ],
-          "args": {
-            "key": "m_005"
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB11"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 1.5707963267948966
-          }
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB11",
-            "QB19"
-          ],
-          "args": {}
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB21"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 1.5707963267948966
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB21"
-          ],
-          "args": {
-            "key": "m_003"
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB19"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 1.5707963267948966
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB19"
-          ],
-          "args": {
-            "key": "m_006"
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB6"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 1.5707963267948966
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB4"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 1.5707963267948966
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB9"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 1.5707963267948966
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB18"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 1.5707963267948966
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB27"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 1.5707963267948966
-          }
-        },
-        {
-          "name": "barrier",
-          "locus": [
-            "QB1",
-            "QB2",
-            "QB6",
-            "QB13",
-            "QB4",
-            "QB5",
-            "QB11",
-            "QB12",
-            "QB20",
-            "QB21",
-            "QB3",
-            "QB9",
-            "QB10",
-            "QB18",
-            "QB19",
-            "QB27",
-            "QB26"
-          ],
-          "args": {}
-        },
-        {
-          "name": "delay",
-          "locus": [
-            "QB1",
-            "QB2",
-            "QB6",
-            "QB13",
-            "QB4",
-            "QB5",
-            "QB11",
-            "QB12",
-            "QB20",
-            "QB21",
-            "QB3",
-            "QB9",
-            "QB10",
-            "QB18",
-            "QB19",
-            "QB27",
-            "QB26"
-          ],
-          "args": {
-            "duration": 2.0000000000000003e-06
-          }
-        },
-        {
-          "name": "barrier",
-          "locus": [
-            "QB1",
-            "QB2",
-            "QB6",
-            "QB13",
-            "QB4",
-            "QB5",
-            "QB11",
-            "QB12",
-            "QB20",
-            "QB21",
-            "QB3",
-            "QB9",
-            "QB10",
-            "QB18",
-            "QB19",
-            "QB27",
-            "QB26"
-          ],
-          "args": {}
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB1"
-          ],
-          "args": {
-            "key": "m_008"
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB6"
-          ],
-          "args": {
-            "key": "m_009"
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB13"
-          ],
-          "args": {
-            "key": "m_010"
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB4"
-          ],
-          "args": {
-            "key": "m_011"
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB11"
-          ],
-          "args": {
-            "key": "m_012"
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB20"
-          ],
-          "args": {
-            "key": "m_013"
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB9"
-          ],
-          "args": {
-            "key": "m_014"
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB18"
-          ],
-          "args": {
-            "key": "m_015"
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB27"
-          ],
-          "args": {
-            "key": "m_016"
-          }
-        }
-      ],
-      "operation_counts": {
-        "prx": 38,
-        "cz": 19,
-        "measure": 17,
-        "barrier": 2,
-        "delay": 1
-      }
-    },
-    {
-      "name": "r1_padding4000ns",
-      "rounds": 1,
-      "padding_ns": 4000.0,
-      "instructions": [
-        {
-          "name": "prx",
-          "locus": [
-            "QB3"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 4.71238898038469
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB19"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 4.71238898038469
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB2"
-          ],
-          "args": {
-            "angle": 1.5707963267949,
-            "phase": 4.712388980384693
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB6"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 4.71238898038469
-          }
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB2",
-            "QB6"
-          ],
-          "args": {}
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB10"
-          ],
-          "args": {
-            "angle": 1.5707963267949,
-            "phase": 4.712388980384693
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB9"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 4.71238898038469
-          }
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB10",
-            "QB9"
-          ],
-          "args": {}
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB26"
-          ],
-          "args": {
-            "angle": 1.5707963267949,
-            "phase": 4.712388980384693
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB27"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 4.71238898038469
-          }
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB26",
-            "QB27"
-          ],
-          "args": {}
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB6"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 1.5707963267948966
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB5"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 4.71238898038469
-          }
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB6",
-            "QB5"
-          ],
-          "args": {}
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB1"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 4.71238898038469
-          }
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB2",
-            "QB1"
-          ],
-          "args": {}
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB3"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 1.5707963267948966
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB3"
-          ],
-          "args": {
-            "key": "m_004"
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB18"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 4.71238898038469
-          }
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB10",
-            "QB18"
-          ],
-          "args": {}
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB12"
-          ],
-          "args": {
-            "angle": 1.5707963267949,
-            "phase": 4.712388980384693
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB6"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 4.71238898038469
-          }
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB12",
-            "QB6"
-          ],
-          "args": {}
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB18"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 1.5707963267948966
-          }
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB18",
-            "QB19"
-          ],
-          "args": {}
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB13"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 4.71238898038469
-          }
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB12",
-            "QB13"
-          ],
-          "args": {}
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB2"
-          ],
-          "args": {
-            "angle": 1.5707963267949,
-            "phase": 1.5707963267949028
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB2"
-          ],
-          "args": {
-            "key": "m_000"
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB18"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 4.71238898038469
-          }
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB26",
-            "QB18"
-          ],
-          "args": {}
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB11"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 4.71238898038469
-          }
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB12",
-            "QB11"
-          ],
-          "args": {}
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB4"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 4.71238898038469
-          }
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB10",
-            "QB4"
-          ],
-          "args": {}
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB1"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 1.5707963267948966
-          }
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB1",
-            "QB5"
-          ],
-          "args": {}
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB20"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 4.71238898038469
-          }
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB12",
-            "QB20"
-          ],
-          "args": {}
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB10",
-            "QB11"
-          ],
-          "args": {}
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB5"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 1.5707963267948966
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB5"
-          ],
-          "args": {
-            "key": "m_001"
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB26"
-          ],
-          "args": {
-            "angle": 1.5707963267949,
-            "phase": 1.5707963267949028
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB26"
-          ],
-          "args": {
-            "key": "m_007"
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB20"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 1.5707963267948966
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB21"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 4.71238898038469
-          }
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB20",
-            "QB21"
-          ],
-          "args": {}
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB20",
-            "QB19"
-          ],
-          "args": {}
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB13"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 1.5707963267948966
-          }
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB13",
-            "QB21"
-          ],
-          "args": {}
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB12"
-          ],
-          "args": {
-            "angle": 1.5707963267949,
-            "phase": 1.5707963267949028
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB12"
-          ],
-          "args": {
-            "key": "m_002"
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB10"
-          ],
-          "args": {
-            "angle": 1.5707963267949,
-            "phase": 1.5707963267949028
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB10"
-          ],
-          "args": {
-            "key": "m_005"
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB11"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 1.5707963267948966
-          }
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB11",
-            "QB19"
-          ],
-          "args": {}
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB21"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 1.5707963267948966
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB21"
-          ],
-          "args": {
-            "key": "m_003"
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB19"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 1.5707963267948966
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB19"
-          ],
-          "args": {
-            "key": "m_006"
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB6"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 1.5707963267948966
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB4"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 1.5707963267948966
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB9"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 1.5707963267948966
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB18"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 1.5707963267948966
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB27"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 1.5707963267948966
-          }
-        },
-        {
-          "name": "barrier",
-          "locus": [
-            "QB1",
-            "QB2",
-            "QB6",
-            "QB13",
-            "QB4",
-            "QB5",
-            "QB11",
-            "QB12",
-            "QB20",
-            "QB21",
-            "QB3",
-            "QB9",
-            "QB10",
-            "QB18",
-            "QB19",
-            "QB27",
-            "QB26"
-          ],
-          "args": {}
-        },
-        {
-          "name": "delay",
-          "locus": [
-            "QB1",
-            "QB2",
-            "QB6",
-            "QB13",
-            "QB4",
-            "QB5",
-            "QB11",
-            "QB12",
-            "QB20",
-            "QB21",
-            "QB3",
-            "QB9",
-            "QB10",
-            "QB18",
-            "QB19",
-            "QB27",
-            "QB26"
-          ],
-          "args": {
-            "duration": 4.000000000000001e-06
-          }
-        },
-        {
-          "name": "barrier",
-          "locus": [
-            "QB1",
-            "QB2",
-            "QB6",
-            "QB13",
-            "QB4",
-            "QB5",
-            "QB11",
-            "QB12",
-            "QB20",
-            "QB21",
-            "QB3",
-            "QB9",
-            "QB10",
-            "QB18",
-            "QB19",
-            "QB27",
-            "QB26"
-          ],
-          "args": {}
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB1"
-          ],
-          "args": {
-            "key": "m_008"
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB6"
-          ],
-          "args": {
-            "key": "m_009"
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB13"
-          ],
-          "args": {
-            "key": "m_010"
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB4"
-          ],
-          "args": {
-            "key": "m_011"
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB11"
-          ],
-          "args": {
-            "key": "m_012"
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB20"
-          ],
-          "args": {
-            "key": "m_013"
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB9"
-          ],
-          "args": {
-            "key": "m_014"
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB18"
-          ],
-          "args": {
-            "key": "m_015"
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB27"
-          ],
-          "args": {
-            "key": "m_016"
-          }
-        }
-      ],
-      "operation_counts": {
-        "prx": 38,
-        "cz": 19,
-        "measure": 17,
-        "barrier": 2,
-        "delay": 1
-      }
-    },
-    {
-      "name": "r1_padding8000ns",
-      "rounds": 1,
-      "padding_ns": 8000.0,
-      "instructions": [
-        {
-          "name": "prx",
-          "locus": [
-            "QB3"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 4.71238898038469
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB19"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 4.71238898038469
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB2"
-          ],
-          "args": {
-            "angle": 1.5707963267949,
-            "phase": 4.712388980384693
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB6"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 4.71238898038469
-          }
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB2",
-            "QB6"
-          ],
-          "args": {}
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB10"
-          ],
-          "args": {
-            "angle": 1.5707963267949,
-            "phase": 4.712388980384693
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB9"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 4.71238898038469
-          }
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB10",
-            "QB9"
-          ],
-          "args": {}
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB26"
-          ],
-          "args": {
-            "angle": 1.5707963267949,
-            "phase": 4.712388980384693
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB27"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 4.71238898038469
-          }
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB26",
-            "QB27"
-          ],
-          "args": {}
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB6"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 1.5707963267948966
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB5"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 4.71238898038469
-          }
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB6",
-            "QB5"
-          ],
-          "args": {}
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB1"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 4.71238898038469
-          }
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB2",
-            "QB1"
-          ],
-          "args": {}
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB3"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 1.5707963267948966
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB3"
-          ],
-          "args": {
-            "key": "m_004"
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB18"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 4.71238898038469
-          }
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB10",
-            "QB18"
-          ],
-          "args": {}
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB12"
-          ],
-          "args": {
-            "angle": 1.5707963267949,
-            "phase": 4.712388980384693
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB6"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 4.71238898038469
-          }
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB12",
-            "QB6"
-          ],
-          "args": {}
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB18"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 1.5707963267948966
-          }
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB18",
-            "QB19"
-          ],
-          "args": {}
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB13"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 4.71238898038469
-          }
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB12",
-            "QB13"
-          ],
-          "args": {}
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB2"
-          ],
-          "args": {
-            "angle": 1.5707963267949,
-            "phase": 1.5707963267949028
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB2"
-          ],
-          "args": {
-            "key": "m_000"
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB18"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 4.71238898038469
-          }
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB26",
-            "QB18"
-          ],
-          "args": {}
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB11"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 4.71238898038469
-          }
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB12",
-            "QB11"
-          ],
-          "args": {}
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB4"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 4.71238898038469
-          }
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB10",
-            "QB4"
-          ],
-          "args": {}
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB1"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 1.5707963267948966
-          }
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB1",
-            "QB5"
-          ],
-          "args": {}
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB20"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 4.71238898038469
-          }
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB12",
-            "QB20"
-          ],
-          "args": {}
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB10",
-            "QB11"
-          ],
-          "args": {}
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB5"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 1.5707963267948966
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB5"
-          ],
-          "args": {
-            "key": "m_001"
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB26"
-          ],
-          "args": {
-            "angle": 1.5707963267949,
-            "phase": 1.5707963267949028
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB26"
-          ],
-          "args": {
-            "key": "m_007"
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB20"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 1.5707963267948966
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB21"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 4.71238898038469
-          }
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB20",
-            "QB21"
-          ],
-          "args": {}
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB20",
-            "QB19"
-          ],
-          "args": {}
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB13"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 1.5707963267948966
-          }
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB13",
-            "QB21"
-          ],
-          "args": {}
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB12"
-          ],
-          "args": {
-            "angle": 1.5707963267949,
-            "phase": 1.5707963267949028
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB12"
-          ],
-          "args": {
-            "key": "m_002"
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB10"
-          ],
-          "args": {
-            "angle": 1.5707963267949,
-            "phase": 1.5707963267949028
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB10"
-          ],
-          "args": {
-            "key": "m_005"
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB11"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 1.5707963267948966
-          }
-        },
-        {
-          "name": "cz",
-          "locus": [
-            "QB11",
-            "QB19"
-          ],
-          "args": {}
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB21"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 1.5707963267948966
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB21"
-          ],
-          "args": {
-            "key": "m_003"
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB19"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 1.5707963267948966
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB19"
-          ],
-          "args": {
-            "key": "m_006"
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB6"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 1.5707963267948966
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB4"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 1.5707963267948966
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB9"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 1.5707963267948966
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB18"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 1.5707963267948966
-          }
-        },
-        {
-          "name": "prx",
-          "locus": [
-            "QB27"
-          ],
-          "args": {
-            "angle": 1.5707963267948966,
-            "phase": 1.5707963267948966
-          }
-        },
-        {
-          "name": "barrier",
-          "locus": [
-            "QB1",
-            "QB2",
-            "QB6",
-            "QB13",
-            "QB4",
-            "QB5",
-            "QB11",
-            "QB12",
-            "QB20",
-            "QB21",
-            "QB3",
-            "QB9",
-            "QB10",
-            "QB18",
-            "QB19",
-            "QB27",
-            "QB26"
-          ],
-          "args": {}
-        },
-        {
-          "name": "delay",
-          "locus": [
-            "QB1",
-            "QB2",
-            "QB6",
-            "QB13",
-            "QB4",
-            "QB5",
-            "QB11",
-            "QB12",
-            "QB20",
-            "QB21",
-            "QB3",
-            "QB9",
-            "QB10",
-            "QB18",
-            "QB19",
-            "QB27",
-            "QB26"
-          ],
-          "args": {
-            "duration": 8.000000000000001e-06
-          }
-        },
-        {
-          "name": "barrier",
-          "locus": [
-            "QB1",
-            "QB2",
-            "QB6",
-            "QB13",
-            "QB4",
-            "QB5",
-            "QB11",
-            "QB12",
-            "QB20",
-            "QB21",
-            "QB3",
-            "QB9",
-            "QB10",
-            "QB18",
-            "QB19",
-            "QB27",
-            "QB26"
-          ],
-          "args": {}
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB1"
-          ],
-          "args": {
-            "key": "m_008"
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB6"
-          ],
-          "args": {
-            "key": "m_009"
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB13"
-          ],
-          "args": {
-            "key": "m_010"
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB4"
-          ],
-          "args": {
-            "key": "m_011"
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB11"
-          ],
-          "args": {
-            "key": "m_012"
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB20"
-          ],
-          "args": {
-            "key": "m_013"
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB9"
-          ],
-          "args": {
-            "key": "m_014"
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB18"
-          ],
-          "args": {
-            "key": "m_015"
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB27"
-          ],
-          "args": {
-            "key": "m_016"
-          }
-        }
-      ],
-      "operation_counts": {
-        "prx": 38,
-        "cz": 19,
-        "measure": 17,
-        "barrier": 2,
-        "delay": 1
-      }
+      ]
     }
-  ]
+  ],
+  "source_plan_sha256": "750fdaebdb879258a78263b11275bd5f489917e11b5056ab1434220fb332b0c6",
+  "note": "Native reference inputs only, not an additional experimental result or timing scan."
 }

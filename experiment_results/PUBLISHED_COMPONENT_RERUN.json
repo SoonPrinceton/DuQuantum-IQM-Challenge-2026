@@ -1,7 +1,8 @@
 {
   "run": "/Users/soonprinceton/Projects/DuQuantum-IQM-Challenge-2026/diagnostics/results/component_storage_rematched/20261025T022823_665676Z",
-  "previous_archive": "evidence/previous_component_controls/0d6b5e63657b",
+  "previous_archive": "diagnostics/archives/experiment_results_cleanup/20261025T030154_613289Z/evidence/previous_component_controls/0d6b5e63657b",
   "status": "measured_and_validated",
   "historical_r3_reused": true,
-  "target_record_window_ns": 5348.0
+  "target_record_window_ns": 5348.0,
+  "previous_archive_location": "diagnostics, outside curated results"
 }
