@@ -1,0 +1,57 @@
+{
+  "reference": "Same IQM optimization/native conversion pipeline, with layout AND routing passes removed.",
+  "distance": 3,
+  "rounds": 3,
+  "basis": "Z",
+  "no_reset": true,
+  "layout": {
+    "14": "QB3",
+    "2": "QB2",
+    "9": "QB5",
+    "11": "QB12",
+    "16": "QB10",
+    "25": "QB26",
+    "18": "QB19",
+    "13": "QB21",
+    "3": "QB6",
+    "15": "QB9",
+    "19": "QB27",
+    "1": "QB1",
+    "8": "QB4",
+    "17": "QB18",
+    "5": "QB13",
+    "10": "QB11",
+    "12": "QB20"
+  },
+  "native_reference_pairs": 24,
+  "reference_operations": {
+    "prx": 106,
+    "cz": 67,
+    "measure": 33
+  },
+  "submitted_operations": {
+    "prx": 106,
+    "cz": 67,
+    "measure": 33
+  },
+  "per_qubit_instruction_traces_equal": false,
+  "mismatched_logical_qubits": [
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    18,
+    25
+  ],
+  "skipped_passes": [
+    "iqm.qrisp_iqm.passes.routing.plasma_layout",
+    "iqm.qrisp_iqm.passes.routing.plasma_route"
+  ],
+  "comparison_precision_radians": 1e-07,
+  "commutation_equivalent_to_unrouted_reference": true,
+  "commutation_comparison_failure": null,
+  "zero_routing_overhead_confirmed": true,
+  "scope": "Submitted gate-level circuit; server pulse schedule and historical compiler pass logs are not reconstructed."
+}

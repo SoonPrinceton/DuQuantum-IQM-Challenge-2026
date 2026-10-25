@@ -1,0 +1,15 @@
+{
+  "job_id": "01a17061-adf4-739c-8734-0e362da9dda7",
+  "arms": [
+    "Z_r0",
+    "Z_r1",
+    "Z_r2",
+    "Z_r3",
+    "Z_single",
+    "X_r0",
+    "X_r1",
+    "X_r2",
+    "X_r3",
+    "X_single"
+  ]
+}

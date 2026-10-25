@@ -1,0 +1,220 @@
+{
+  "metadata": {
+    "device": "emerald",
+    "calibration_set_id": "23e12f6b-c23c-4736-8736-b0142989c0e6",
+    "layout": {
+      "14": "QB3",
+      "2": "QB2",
+      "9": "QB5",
+      "11": "QB12",
+      "16": "QB10",
+      "25": "QB26",
+      "18": "QB19",
+      "13": "QB21",
+      "3": "QB6",
+      "15": "QB9",
+      "19": "QB27",
+      "1": "QB1",
+      "8": "QB4",
+      "17": "QB18",
+      "5": "QB13",
+      "10": "QB11",
+      "12": "QB20"
+    },
+    "shots_per_arm_per_block": 1000,
+    "blocks": 2,
+    "correlated": false,
+    "target_post_preparation_ns": 5000.0,
+    "includes_final_readout": false,
+    "idle_error_per_us": 0.003,
+    "noise": {
+      "after_clifford_depolarization": 0.003,
+      "after_reset_flip_probability": 0.003,
+      "before_measure_flip_probability": 0.003,
+      "before_round_data_depolarization": 0.003
+    },
+    "zero_swaps": true,
+    "no_midcircuit_reset": true,
+    "preparation": "Common unitary encoded known-state preparation for every round count; non-fault-tolerant",
+    "decoder": "All 8 checks at each round plus 4 final data-derived checks; no physical corrections",
+    "timing": "From the global barrier AFTER encoding to the barrier BEFORE final basis rotation/readout; boundary times from compiled prefixes, no guessed reset duration",
+    "idle_model": "Effective homogeneous Pauli depolarization per us on all active qubits; not calibrated T1/T2",
+    "server_timestamp_verified": false,
+    "source_run": "/Users/soonprinceton/Projects/DuQuantum-IQM-Challenge-2026/diagnostics/results/fixed_duration_memory/20261025T000253_872440Z",
+    "max_near_zero_ns": 8.0,
+    "with_15us_controls": false,
+    "diagnostic": "Encoded logical X/Z only, zero extraction rounds, 5000 ns storage",
+    "historical_15us_summary": {
+      "Z_r0": {
+        "shots": 2000,
+        "failures": 502,
+        "p_error": 0.251,
+        "wilson95": [
+          0.2324870622616892,
+          0.27046762728437473
+        ],
+        "raw_probability": 0.374
+      },
+      "X_r0": {
+        "shots": 2000,
+        "failures": 970,
+        "p_error": 0.485,
+        "wilson95": [
+          0.4631465412059797,
+          0.5069109702124578
+        ],
+        "raw_probability": 0.5055
+      }
+    }
+  },
+  "timing": [
+    {
+      "name": "Z_r0_5us",
+      "total_schedule_ns": 407196.0,
+      "idle_ns": [
+        5000.0
+      ],
+      "initialization_ns": 400000.0,
+      "state_preparation_ns": 1080.0,
+      "storage_before_readout_ns": 5000.0,
+      "final_readout_ns": 1116.0,
+      "benchmark_duration_ns": 5000.0,
+      "includes_final_readout": false,
+      "prepared_boundary_ns": 401080.0,
+      "readout_boundary_ns": 406080.0
+    },
+    {
+      "name": "X_r0_5us",
+      "total_schedule_ns": 406940.0,
+      "idle_ns": [
+        5000.0
+      ],
+      "initialization_ns": 400000.0,
+      "state_preparation_ns": 752.0,
+      "storage_before_readout_ns": 5000.0,
+      "final_readout_ns": 1188.0,
+      "benchmark_duration_ns": 5000.0,
+      "includes_final_readout": false,
+      "prepared_boundary_ns": 400752.0,
+      "readout_boundary_ns": 405752.0
+    }
+  ],
+  "summary": {
+    "Z_r0_5us": {
+      "shots": 2000,
+      "failures": 234,
+      "raw_flips": 519,
+      "rescued_by_decoder": 340,
+      "introduced_by_decoder": 55,
+      "p_error": 0.117,
+      "wilson95": [
+        0.10364199138514973,
+        0.13182646683229002
+      ],
+      "raw_probability": 0.2595,
+      "raw_wilson95": [
+        0.24076230269098858,
+        0.27915979705129407
+      ],
+      "detector_rates": [
+        0.253,
+        0.1795,
+        0.148,
+        0.2575
+      ],
+      "per_block": [
+        {
+          "block": "block0",
+          "shots": 1000,
+          "failures": 124,
+          "raw_flips": 276
+        },
+        {
+          "block": "block1",
+          "shots": 1000,
+          "failures": 110,
+          "raw_flips": 243
+        }
+      ]
+    },
+    "X_r0_5us": {
+      "shots": 2000,
+      "failures": 1045,
+      "raw_flips": 960,
+      "rescued_by_decoder": 334,
+      "introduced_by_decoder": 419,
+      "p_error": 0.5225,
+      "wilson95": [
+        0.5005869515842244,
+        0.5443267812881191
+      ],
+      "raw_probability": 0.48,
+      "raw_wilson95": [
+        0.4581637787459181,
+        0.5019129031453318
+      ],
+      "detector_rates": [
+        0.515,
+        0.3825,
+        0.4905,
+        0.504
+      ],
+      "per_block": [
+        {
+          "block": "block0",
+          "shots": 1000,
+          "failures": 540,
+          "raw_flips": 496
+        },
+        {
+          "block": "block1",
+          "shots": 1000,
+          "failures": 505,
+          "raw_flips": 464
+        }
+      ]
+    }
+  },
+  "comparisons": [
+    {
+      "source_arm": "Z_r0",
+      "diagnostic_minus_15us": -0.134,
+      "difference_ci95": [
+        -0.15760984765384448,
+        -0.11028180060730647
+      ],
+      "fisher_p_unadjusted": 3.9160333600797936e-28,
+      "control": {
+        "shots": 2000,
+        "failures": 502,
+        "p_error": 0.251,
+        "wilson95": [
+          0.2324870622616892,
+          0.27046762728437473
+        ],
+        "raw_probability": 0.374
+      },
+      "provenance": "historical job: drift and run-to-run differences may confound the comparison"
+    },
+    {
+      "source_arm": "X_r0",
+      "diagnostic_minus_15us": 0.03749999999999998,
+      "difference_ci95": [
+        0.006511739214287313,
+        0.06838659972644007
+      ],
+      "fisher_p_unadjusted": 0.01926466481841057,
+      "control": {
+        "shots": 2000,
+        "failures": 970,
+        "p_error": 0.485,
+        "wilson95": [
+          0.4631465412059797,
+          0.5069109702124578
+        ],
+        "raw_probability": 0.5055
+      },
+      "provenance": "historical job: drift and run-to-run differences may confound the comparison"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Z_r0_near0",
+    "total_schedule_ns": 402196.0,
+    "idle_ns": [
+      0.0
+    ],
+    "initialization_ns": 400000.0,
+    "state_preparation_ns": 1080.0,
+    "storage_before_readout_ns": 0.0,
+    "final_readout_ns": 1116.0,
+    "benchmark_duration_ns": 0.0,
+    "includes_final_readout": false,
+    "prepared_boundary_ns": 401080.0,
+    "readout_boundary_ns": 401080.0
+  },
+  {
+    "name": "X_r0_near0",
+    "total_schedule_ns": 401940.0,
+    "idle_ns": [
+      0.0
+    ],
+    "initialization_ns": 400000.0,
+    "state_preparation_ns": 752.0,
+    "storage_before_readout_ns": 0.0,
+    "final_readout_ns": 1188.0,
+    "benchmark_duration_ns": 0.0,
+    "includes_final_readout": false,
+    "prepared_boundary_ns": 400752.0,
+    "readout_boundary_ns": 400752.0
+  }
+]

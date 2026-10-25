@@ -236,6 +236,20 @@ def decode_hardware_results(
     return ler, err
 
 if __name__ == "__main__":
-    syndromes = run_qrisp(distance=3, rounds=3, shots=1000, token=TOKEN, quantum_computer="garnet", no_reset=True)
+    syndromes = run_qrisp(distance=3, rounds=3, shots=1000, token=TOKEN, quantum_computer="emerald", no_reset=True)
+    from pathlib import Path
+    import numpy as np
+
+    output = Path("diagnostics/results/surface_code/run_004_emerald")
+    output.mkdir(parents=True, exist_ok=False)
+
+    np.savez_compressed(
+        output / "measurements.npz",
+        det_events=syndromes["det_events"],
+        obs_flips=syndromes["obs_flips"],
+        shots=syndromes["shots"],
+    )
+
+    syndromes["dem"].to_file(str(output / "model.dem"))
     ler, err = decode_hardware_results(syndromes)
     print(f"Logical error probability: {ler:.4f} ± {err:.4f}")

@@ -1,0 +1,164 @@
+[
+  {
+    "name": "Z_r0",
+    "total_schedule_ns": 417196.0,
+    "idle_ns": [
+      15000.0
+    ],
+    "initialization_ns": 400000.0,
+    "state_preparation_ns": 1080.0,
+    "storage_before_readout_ns": 15000.0,
+    "final_readout_ns": 1116.0,
+    "benchmark_duration_ns": 15000.0,
+    "includes_final_readout": false,
+    "prepared_boundary_ns": 401080.0,
+    "readout_boundary_ns": 416080.0
+  },
+  {
+    "name": "Z_r1",
+    "total_schedule_ns": 417192.0,
+    "idle_ns": [
+      6612.0,
+      6612.0
+    ],
+    "initialization_ns": 400000.0,
+    "state_preparation_ns": 1080.0,
+    "storage_before_readout_ns": 14996.0,
+    "final_readout_ns": 1116.0,
+    "benchmark_duration_ns": 14996.0,
+    "includes_final_readout": false,
+    "prepared_boundary_ns": 401080.0,
+    "readout_boundary_ns": 416076.0
+  },
+  {
+    "name": "Z_r2",
+    "total_schedule_ns": 417192.0,
+    "idle_ns": [
+      3816.0,
+      3816.0,
+      3812.0
+    ],
+    "initialization_ns": 400000.0,
+    "state_preparation_ns": 1080.0,
+    "storage_before_readout_ns": 14996.0,
+    "final_readout_ns": 1116.0,
+    "benchmark_duration_ns": 14996.0,
+    "includes_final_readout": false,
+    "prepared_boundary_ns": 401080.0,
+    "readout_boundary_ns": 416076.0
+  },
+  {
+    "name": "Z_r3",
+    "total_schedule_ns": 417196.0,
+    "idle_ns": [
+      2424.0,
+      2420.0,
+      2420.0,
+      2420.0
+    ],
+    "initialization_ns": 400000.0,
+    "state_preparation_ns": 1080.0,
+    "storage_before_readout_ns": 15000.0,
+    "final_readout_ns": 1116.0,
+    "benchmark_duration_ns": 15000.0,
+    "includes_final_readout": false,
+    "prepared_boundary_ns": 401080.0,
+    "readout_boundary_ns": 416080.0
+  },
+  {
+    "name": "Z_single",
+    "total_schedule_ns": 416116.0,
+    "idle_ns": [
+      15000.0
+    ],
+    "initialization_ns": 400000.0,
+    "state_preparation_ns": 0.0,
+    "storage_before_readout_ns": 15000.0,
+    "final_readout_ns": 1116.0,
+    "benchmark_duration_ns": 15000.0,
+    "includes_final_readout": false,
+    "prepared_boundary_ns": 400000.0,
+    "readout_boundary_ns": 415000.0
+  },
+  {
+    "name": "X_r0",
+    "total_schedule_ns": 416940.0,
+    "idle_ns": [
+      15000.0
+    ],
+    "initialization_ns": 400000.0,
+    "state_preparation_ns": 752.0,
+    "storage_before_readout_ns": 15000.0,
+    "final_readout_ns": 1188.0,
+    "benchmark_duration_ns": 15000.0,
+    "includes_final_readout": false,
+    "prepared_boundary_ns": 400752.0,
+    "readout_boundary_ns": 415752.0
+  },
+  {
+    "name": "X_r1",
+    "total_schedule_ns": 416936.0,
+    "idle_ns": [
+      6612.0,
+      6612.0
+    ],
+    "initialization_ns": 400000.0,
+    "state_preparation_ns": 752.0,
+    "storage_before_readout_ns": 14996.0,
+    "final_readout_ns": 1188.0,
+    "benchmark_duration_ns": 14996.0,
+    "includes_final_readout": false,
+    "prepared_boundary_ns": 400752.0,
+    "readout_boundary_ns": 415748.0
+  },
+  {
+    "name": "X_r2",
+    "total_schedule_ns": 416936.0,
+    "idle_ns": [
+      3816.0,
+      3816.0,
+      3812.0
+    ],
+    "initialization_ns": 400000.0,
+    "state_preparation_ns": 752.0,
+    "storage_before_readout_ns": 14996.0,
+    "final_readout_ns": 1188.0,
+    "benchmark_duration_ns": 14996.0,
+    "includes_final_readout": false,
+    "prepared_boundary_ns": 400752.0,
+    "readout_boundary_ns": 415748.0
+  },
+  {
+    "name": "X_r3",
+    "total_schedule_ns": 416940.0,
+    "idle_ns": [
+      2424.0,
+      2420.0,
+      2420.0,
+      2420.0
+    ],
+    "initialization_ns": 400000.0,
+    "state_preparation_ns": 752.0,
+    "storage_before_readout_ns": 15000.0,
+    "final_readout_ns": 1188.0,
+    "benchmark_duration_ns": 15000.0,
+    "includes_final_readout": false,
+    "prepared_boundary_ns": 400752.0,
+    "readout_boundary_ns": 415752.0
+  },
+  {
+    "name": "X_single",
+    "total_schedule_ns": 416260.0,
+    "idle_ns": [
+      15000.0
+    ],
+    "initialization_ns": 400000.0,
+    "state_preparation_ns": 72.0,
+    "storage_before_readout_ns": 15000.0,
+    "final_readout_ns": 1188.0,
+    "benchmark_duration_ns": 15000.0,
+    "includes_final_readout": false,
+    "prepared_boundary_ns": 400072.0,
+    "readout_boundary_ns": 415072.0
+  }
+]

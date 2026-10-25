@@ -1,0 +1,11 @@
+{
+  "unchanged_original_diagnostics_files": 725,
+  "source_function_bodies_preserved": 36,
+  "original_copied_data_files": 114,
+  "source_copy_hashes_match": true,
+  "no_diagnostics_import_dependency": true,
+  "no_credentials_or_cache_files_copied": true,
+  "offline_analysis_executed_from_external_working_directory": true,
+  "no_new_experiments": true,
+  "no_hardware_jobs_submitted": true
+}

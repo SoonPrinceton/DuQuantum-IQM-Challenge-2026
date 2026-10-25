@@ -1,0 +1,221 @@
+{
+  "metadata": {
+    "device": "emerald",
+    "calibration_set_id": "23e12f6b-c23c-4736-8736-b0142989c0e6",
+    "layout": {
+      "14": "QB3",
+      "2": "QB2",
+      "9": "QB5",
+      "11": "QB12",
+      "16": "QB10",
+      "25": "QB26",
+      "18": "QB19",
+      "13": "QB21",
+      "3": "QB6",
+      "15": "QB9",
+      "19": "QB27",
+      "1": "QB1",
+      "8": "QB4",
+      "17": "QB18",
+      "5": "QB13",
+      "10": "QB11",
+      "12": "QB20"
+    },
+    "shots_per_arm_per_block": 1000,
+    "blocks": 2,
+    "correlated": false,
+    "target_post_preparation_ns": 0.0,
+    "includes_final_readout": false,
+    "idle_error_per_us": 0.003,
+    "noise": {
+      "after_clifford_depolarization": 0.003,
+      "after_reset_flip_probability": 0.003,
+      "before_measure_flip_probability": 0.003,
+      "before_round_data_depolarization": 0.003
+    },
+    "zero_swaps": true,
+    "no_midcircuit_reset": true,
+    "preparation": "Common unitary encoded known-state preparation for every round count; non-fault-tolerant",
+    "decoder": "All 8 checks at each round plus 4 final data-derived checks; no physical corrections",
+    "timing": "From the global barrier AFTER encoding to the barrier BEFORE final basis rotation/readout; boundary times from compiled prefixes, no guessed reset duration",
+    "idle_model": "Effective homogeneous Pauli depolarization per us on all active qubits; not calibrated T1/T2",
+    "server_timestamp_verified": false,
+    "source_run": "/Users/soonprinceton/Projects/DuQuantum-IQM-Challenge-2026/diagnostics/results/fixed_duration_memory/20261025T000253_872440Z",
+    "max_near_zero_ns": 8.0,
+    "with_15us_controls": false,
+    "diagnostic": "Only encoded logical Z/X, zero extraction rounds and zero explicit storage delay",
+    "historical_15us_summary": {
+      "Z_r0": {
+        "shots": 2000,
+        "failures": 502,
+        "p_error": 0.251,
+        "wilson95": [
+          0.2324870622616892,
+          0.27046762728437473
+        ],
+        "raw_probability": 0.374
+      },
+      "X_r0": {
+        "shots": 2000,
+        "failures": 970,
+        "p_error": 0.485,
+        "wilson95": [
+          0.4631465412059797,
+          0.5069109702124578
+        ],
+        "raw_probability": 0.5055
+      }
+    },
+    "timing_provenance": "Identical two circuits already pulse-compiled in diagnostics/results/zero_round_preparation/20261025T001357_926894Z; hardware entry point recompiles this subset before submission"
+  },
+  "timing": [
+    {
+      "name": "Z_r0_near0",
+      "total_schedule_ns": 402196.0,
+      "idle_ns": [
+        0.0
+      ],
+      "initialization_ns": 400000.0,
+      "state_preparation_ns": 1080.0,
+      "storage_before_readout_ns": 0.0,
+      "final_readout_ns": 1116.0,
+      "benchmark_duration_ns": 0.0,
+      "includes_final_readout": false,
+      "prepared_boundary_ns": 401080.0,
+      "readout_boundary_ns": 401080.0
+    },
+    {
+      "name": "X_r0_near0",
+      "total_schedule_ns": 401940.0,
+      "idle_ns": [
+        0.0
+      ],
+      "initialization_ns": 400000.0,
+      "state_preparation_ns": 752.0,
+      "storage_before_readout_ns": 0.0,
+      "final_readout_ns": 1188.0,
+      "benchmark_duration_ns": 0.0,
+      "includes_final_readout": false,
+      "prepared_boundary_ns": 400752.0,
+      "readout_boundary_ns": 400752.0
+    }
+  ],
+  "summary": {
+    "Z_r0_near0": {
+      "shots": 2000,
+      "failures": 58,
+      "raw_flips": 289,
+      "rescued_by_decoder": 245,
+      "introduced_by_decoder": 14,
+      "p_error": 0.029,
+      "wilson95": [
+        0.022500401616129873,
+        0.03730545692281039
+      ],
+      "raw_probability": 0.1445,
+      "raw_wilson95": [
+        0.12977211830402138,
+        0.1605909023129494
+      ],
+      "detector_rates": [
+        0.138,
+        0.115,
+        0.062,
+        0.1415
+      ],
+      "per_block": [
+        {
+          "block": "block0",
+          "shots": 1000,
+          "failures": 25,
+          "raw_flips": 138
+        },
+        {
+          "block": "block1",
+          "shots": 1000,
+          "failures": 33,
+          "raw_flips": 151
+        }
+      ]
+    },
+    "X_r0_near0": {
+      "shots": 2000,
+      "failures": 40,
+      "raw_flips": 163,
+      "rescued_by_decoder": 139,
+      "introduced_by_decoder": 16,
+      "p_error": 0.02,
+      "wilson95": [
+        0.014721726201265444,
+        0.027118639188737373
+      ],
+      "raw_probability": 0.0815,
+      "raw_wilson95": [
+        0.07029605647844997,
+        0.09430851209595872
+      ],
+      "detector_rates": [
+        0.073,
+        0.1285,
+        0.1035,
+        0.0995
+      ],
+      "per_block": [
+        {
+          "block": "block0",
+          "shots": 1000,
+          "failures": 18,
+          "raw_flips": 86
+        },
+        {
+          "block": "block1",
+          "shots": 1000,
+          "failures": 22,
+          "raw_flips": 77
+        }
+      ]
+    }
+  },
+  "comparisons": [
+    {
+      "source_arm": "Z_r0",
+      "near0_minus_15us": -0.222,
+      "difference_ci95": [
+        -0.24252396870088577,
+        -0.20170937461783814
+      ],
+      "fisher_p_unadjusted": 1.04148520828344e-101,
+      "control": {
+        "shots": 2000,
+        "failures": 502,
+        "p_error": 0.251,
+        "wilson95": [
+          0.2324870622616892,
+          0.27046762728437473
+        ],
+        "raw_probability": 0.374
+      },
+      "provenance": "historical job: drift and run-to-run differences may confound the comparison"
+    },
+    {
+      "source_arm": "X_r0",
+      "near0_minus_15us": -0.46499999999999997,
+      "difference_ci95": [
+        -0.4875377636411783,
+        -0.44201633873462776
+      ],
+      "fisher_p_unadjusted": 2.5691072137591423e-296,
+      "control": {
+        "shots": 2000,
+        "failures": 970,
+        "p_error": 0.485,
+        "wilson95": [
+          0.4631465412059797,
+          0.5069109702124578
+        ],
+        "raw_probability": 0.5055
+      },
+      "provenance": "historical job: drift and run-to-run differences may confound the comparison"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "name": "prx",
+    "locus": [
+      "QB1"
+    ],
+    "args": {
+      "angle": 3.141592653589793,
+      "phase": 0.0
+    }
+  },
+  {
+    "name": "prx",
+    "locus": [
+      "QB1"
+    ],
+    "args": {
+      "angle": -1.5707963267948966,
+      "phase": 1.5707963267948966
+    }
+  },
+  {
+    "name": "barrier",
+    "locus": [
+      "QB1"
+    ],
+    "args": {}
+  },
+  {
+    "name": "delay",
+    "locus": [
+      "QB1"
+    ],
+    "args": {
+      "duration": 1.5e-05
+    }
+  },
+  {
+    "name": "barrier",
+    "locus": [
+      "QB1"
+    ],
+    "args": {}
+  },
+  {
+    "name": "prx",
+    "locus": [
+      "QB1"
+    ],
+    "args": {
+      "angle": 3.141592653589793,
+      "phase": 0.0
+    }
+  },
+  {
+    "name": "prx",
+    "locus": [
+      "QB1"
+    ],
+    "args": {
+      "angle": -1.5707963267948966,
+      "phase": 1.5707963267948966
+    }
+  },
+  {
+    "name": "measure",
+    "locus": [
+      "QB1"
+    ],
+    "args": {
+      "key": "m_000"
+    }
+  }
+]

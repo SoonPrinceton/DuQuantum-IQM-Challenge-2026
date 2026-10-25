@@ -1,0 +1,4 @@
+-r requirements.txt
+iqm-client==35.0.3
+iqm-pulla==14.0.3
+python-dotenv==1.2.4

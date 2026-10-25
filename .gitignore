@@ -6,3 +6,6 @@ venv/
 .env
 .DS_Store
 .vscode/
+
+# Local diagnostic scripts and experiment results
+/diagnostics/

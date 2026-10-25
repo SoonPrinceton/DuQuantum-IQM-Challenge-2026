@@ -1,0 +1,34 @@
+[
+  {
+    "name": "barrier",
+    "locus": [
+      "QB1"
+    ],
+    "args": {}
+  },
+  {
+    "name": "delay",
+    "locus": [
+      "QB1"
+    ],
+    "args": {
+      "duration": 1.5e-05
+    }
+  },
+  {
+    "name": "barrier",
+    "locus": [
+      "QB1"
+    ],
+    "args": {}
+  },
+  {
+    "name": "measure",
+    "locus": [
+      "QB1"
+    ],
+    "args": {
+      "key": "m_000"
+    }
+  }
+]

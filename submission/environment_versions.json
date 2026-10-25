@@ -1,0 +1,17 @@
+{
+  "python": "3.12.15",
+  "packages": {
+    "numpy": "2.4.6",
+    "stim": "1.16.0",
+    "pymatching": "2.4.0",
+    "matplotlib": "3.11.2",
+    "scipy": "1.18.1",
+    "qiskit": "2.1.2",
+    "qiskit-aer": "0.17.2",
+    "iqm-client": "35.0.3",
+    "iqm-pulla": "14.0.3",
+    "iqm-pulse": "14.0.3",
+    "python-dotenv": "1.2.4"
+  },
+  "note": "Observed local analysis environment, not a historical server environment snapshot."
+}

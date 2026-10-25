@@ -1,0 +1,978 @@
+{
+  "created_utc": "2026-10-25T00:45:08.040402+00:00",
+  "datasets": {
+    "memory_15us": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z",
+    "memory_near_zero": "diagnostics/results/zero_round_preparation/20261025T001506_624673Z",
+    "memory_5us": "diagnostics/results/zero_round_5us/20261025T002004_576877Z"
+  },
+  "files": [
+    {
+      "source": "surface_code.py",
+      "destination": "code/surface_code.py",
+      "source_sha256": "6f02904d35e2610bc26ff4eda0f1a9b4d2d0aa58c80d3a4a221fe57a4df658fd",
+      "mode": "submission copy",
+      "changes": [
+        "Extract only DEFAULT_NOISE, make_stim_circuit and _remove_round_resets; omit unused framework stubs/helpers.",
+        "Shorten generator docstring to describe the included native pipeline; executable function bodies unchanged."
+      ]
+    },
+    {
+      "source": "diagnostics/encoded_zero_round.py",
+      "destination": "code/geometry.py",
+      "source_sha256": "c937872edbb775503ee7cafe02da8c3e45764640e3e5c3f70ebcef419a6fe193",
+      "mode": "submission copy",
+      "changes": [
+        "Extract description only; the benchmark retains its validated X/Z encoder implementation."
+      ]
+    },
+    {
+      "source": [
+        "diagnostics/compare_rounds_storage.py",
+        "diagnostics/check_measurement_crosstalk.py"
+      ],
+      "destination": "code/utilities.py",
+      "mode": "function extraction",
+      "changes": [
+        "Keep extract, interval, ideal_raw and collect_job_results only; Qiskit simulator imports are lazy."
+      ]
+    },
+    {
+      "source": "diagnostics/fixed_duration_memory.py",
+      "destination": "code/memory_benchmark.py",
+      "source_sha256": "2aa6cbab15cd3e2d7c583769122ef5adf7d1eae74cd3708e939d8cd720225d7a",
+      "mode": "submission copy",
+      "changes": [
+        "Local imports and portable default data/output paths; offline --analyze is replaced by reproduce_analysis.py to keep archived data immutable. Computational functions unchanged."
+      ]
+    },
+    {
+      "source": "diagnostics/check_zero_round_preparation.py",
+      "destination": "code/zero_round.py",
+      "source_sha256": "ee14ff79c8f97d4b347ea37a7d1fcaf49de1a942a29de2fd20f20f1096e530a3",
+      "mode": "submission copy",
+      "changes": [
+        "Local imports and portable data/output paths; offline --analyze replaced by reproduce_analysis.py. Existing near-zero/5 us generation and execution retained."
+      ]
+    },
+    {
+      "source": "diagnostics/check_zero_round_5us.py",
+      "destination": "code/zero_round_5us.py",
+      "source_sha256": "678690153abd572c4983579188f4a6e5104424031a3eb5dc90a91d57a14ae6a5",
+      "mode": "submission copy",
+      "changes": [
+        "Import portable zero_round module; CLI documentation paths only."
+      ]
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/plan.json",
+      "destination": "data/memory_15us/plan.json",
+      "sha256": "88418631e07e53075b7bf4dfcba002290fe63a98c7efb21db0eeb449465aef49",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/results.json",
+      "destination": "data/memory_15us/results.json",
+      "sha256": "de29f7c6cb059596bcc66178633db948bf07768d259098989e3c095b88b259f6",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/pre_submission_timing.json",
+      "destination": "data/memory_15us/pre_submission_timing.json",
+      "sha256": "42c0095249921c76aeddc3158a23d2db1844e034ac843e8726e774b7705ba145",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/block0_job.json",
+      "destination": "data/memory_15us/block0_job.json",
+      "sha256": "91f50f1f74682f1b542136361577e9ef5bb8a015ee04a37d83cb48297d16ddac",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/block1_job.json",
+      "destination": "data/memory_15us/block1_job.json",
+      "sha256": "319d9d121e55dfc996c20346c0a44eecd9b07a0cd455d7ad4025ff85f2a7f7b8",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/block0_status.json",
+      "destination": "data/memory_15us/block0_status.json",
+      "sha256": "f03a39089e7b85d7ae6acfd3aaa50850ea8286fe2d2105200993850b9bb23e8c",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/block1_status.json",
+      "destination": "data/memory_15us/block1_status.json",
+      "sha256": "3ded08176e9d105b9b69445b9135e52033c32b477d59f7c77c6c4d941d693b37",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/Z_r0/reference.stim",
+      "destination": "data/memory_15us/Z_r0/reference.stim",
+      "sha256": "d9a60c719c270674d54cf3833f2ecf58fd28d77d880f65de31ed386407f9f233",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/Z_r0/model.stim",
+      "destination": "data/memory_15us/Z_r0/model.stim",
+      "sha256": "a49d75dd70e0648ba142b9558f15690ddcc635152c8303e640dd483f5d6d58d0",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/Z_r0/model.dem",
+      "destination": "data/memory_15us/Z_r0/model.dem",
+      "sha256": "6b6d12a060e28a68986ee2ba5eb8806afbc60e945215c098a25de243a42a57c7",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/Z_r0/native_instructions.json",
+      "destination": "data/memory_15us/Z_r0/native_instructions.json",
+      "sha256": "31243e20a92d9bfdf724c4e2638e2be74b143f419a70dfde5d289bfa7c495d53",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/Z_r0/block0.npz",
+      "destination": "data/memory_15us/Z_r0/block0.npz",
+      "sha256": "80f8a05fb0348a59e69a2ffe03af4c84f0e5eede1790f9a19190bab347a0d3a1",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/Z_r0/block1.npz",
+      "destination": "data/memory_15us/Z_r0/block1.npz",
+      "sha256": "7fe47eaf956da8217b224939a2beb8e9b00e974cad3793911b16746c779e5645",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/Z_r1/reference.stim",
+      "destination": "data/memory_15us/Z_r1/reference.stim",
+      "sha256": "482c539423fd5ec1440ec9eb9a65c59c5233ba53523117422fbb67a3bb0f47b9",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/Z_r1/model.stim",
+      "destination": "data/memory_15us/Z_r1/model.stim",
+      "sha256": "3c581f7ada689410799787622bd7fc483e8468540b94b9b294c08c4a7bf37ff9",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/Z_r1/model.dem",
+      "destination": "data/memory_15us/Z_r1/model.dem",
+      "sha256": "344f9c0543b6527cae1358408acfd85f311dc67f7ca4043fe2fb9b5a8937df2d",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/Z_r1/native_instructions.json",
+      "destination": "data/memory_15us/Z_r1/native_instructions.json",
+      "sha256": "b73c710b5a4a3c24d148f572fe45f869b0b55c4a3a4e4e086971f51dfce5a3fe",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/Z_r1/block0.npz",
+      "destination": "data/memory_15us/Z_r1/block0.npz",
+      "sha256": "8269dc5e9239f19135454668d49e7cd075b35a15b35dd504dddaaa0f31ad53e0",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/Z_r1/block1.npz",
+      "destination": "data/memory_15us/Z_r1/block1.npz",
+      "sha256": "600ea967644fc02f5a1aa47935129b46154e7a03da30a6b4f831e71dc13a3793",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/Z_r2/reference.stim",
+      "destination": "data/memory_15us/Z_r2/reference.stim",
+      "sha256": "1af00be66d39360119816746764daf299b30d7f69128fa57ff5fa0356054cf64",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/Z_r2/model.stim",
+      "destination": "data/memory_15us/Z_r2/model.stim",
+      "sha256": "81f76a3bd1a74dce52a05ef6443830bb9b170d4a415be95c4c92121e313a05eb",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/Z_r2/model.dem",
+      "destination": "data/memory_15us/Z_r2/model.dem",
+      "sha256": "7ff120e6361fc239f3711bc0ce19ca0defdf6feef8ee967482c245f23a8f2462",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/Z_r2/native_instructions.json",
+      "destination": "data/memory_15us/Z_r2/native_instructions.json",
+      "sha256": "7dff459909a53bb96345ef40df7aa334dadb8e14a0c426be5accf5a44301661c",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/Z_r2/block0.npz",
+      "destination": "data/memory_15us/Z_r2/block0.npz",
+      "sha256": "b0d95e6cfbd27b7dd332ebb3c79e9262728ceca99fce0024d878866cae5e8c81",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/Z_r2/block1.npz",
+      "destination": "data/memory_15us/Z_r2/block1.npz",
+      "sha256": "d81b7c01b2615376ebf5464044bf1dd54d4680626020b8ba24515c473ce06d15",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/Z_r3/reference.stim",
+      "destination": "data/memory_15us/Z_r3/reference.stim",
+      "sha256": "5eded757779d51cafeb5159f3de9ae6ba9f0df8bd5a605b0cac7be7a1b904fdd",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/Z_r3/model.stim",
+      "destination": "data/memory_15us/Z_r3/model.stim",
+      "sha256": "4efb5a71ee5f201c7212b7ef3459b41a20b739d5678141361496a31f4dbb9eb0",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/Z_r3/model.dem",
+      "destination": "data/memory_15us/Z_r3/model.dem",
+      "sha256": "494566386a101f7485833e107c09620323211f04bee4d93995b1c938c9396992",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/Z_r3/native_instructions.json",
+      "destination": "data/memory_15us/Z_r3/native_instructions.json",
+      "sha256": "ee8e7d9650f5ce12e34082b23daf319f7110ef7b74bf03d0a00d84792c9a63b2",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/Z_r3/block0.npz",
+      "destination": "data/memory_15us/Z_r3/block0.npz",
+      "sha256": "3677fd2e66252740ba9d0860ac5947ca4d21609f362a57685c16d775d2c59e32",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/Z_r3/block1.npz",
+      "destination": "data/memory_15us/Z_r3/block1.npz",
+      "sha256": "870f51711d646941320e499746e91bb1aff2d124093a987c8bfcf8bdabbe3aa4",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/Z_single/reference.stim",
+      "destination": "data/memory_15us/Z_single/reference.stim",
+      "sha256": "8c1a3aa680e53d635ab9bd16017b959db94730d23a674dc59997acb33ee46577",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/Z_single/model.stim",
+      "destination": "data/memory_15us/Z_single/model.stim",
+      "sha256": "ace429b473e540f7cc87a8b4d708affedcdfc7f91f0e7c6f81ab4fc6cfbf7282",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/Z_single/model.dem",
+      "destination": "data/memory_15us/Z_single/model.dem",
+      "sha256": "f92aa1dc67688630d8a33ac593836c8bb949b811885a831324de484ae2ced81c",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/Z_single/native_instructions.json",
+      "destination": "data/memory_15us/Z_single/native_instructions.json",
+      "sha256": "9c85ad878cec42a819628d3454c58e0928f236056eadf3f0b25e20682db69e9e",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/Z_single/block0.npz",
+      "destination": "data/memory_15us/Z_single/block0.npz",
+      "sha256": "34cab8aa71201b038823519fc76c04531f7440a42018151ac72b760a485f8054",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/Z_single/block1.npz",
+      "destination": "data/memory_15us/Z_single/block1.npz",
+      "sha256": "dc2156bafca578139113948eabbea88bda0f79a164aeedd62a96b6e281f6f88b",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/X_r0/reference.stim",
+      "destination": "data/memory_15us/X_r0/reference.stim",
+      "sha256": "cee24fb18e773be1f00820db3bf8d3c1ebdeab7b8cb097cc824a05f4cec062b9",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/X_r0/model.stim",
+      "destination": "data/memory_15us/X_r0/model.stim",
+      "sha256": "dcb3baede7455f7c088835067f0caa9ac5ee6c014bcfb1b61f29b6cdbd9885e7",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/X_r0/model.dem",
+      "destination": "data/memory_15us/X_r0/model.dem",
+      "sha256": "add1eafdaa2b7a48284f60db2d36e322b7489c37e6d3cfe8bb5f28e01e7c3203",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/X_r0/native_instructions.json",
+      "destination": "data/memory_15us/X_r0/native_instructions.json",
+      "sha256": "ff50c9fd522bc1ed55d2009edb3386633c4576d571747ccb5caa776a1831bb45",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/X_r0/block0.npz",
+      "destination": "data/memory_15us/X_r0/block0.npz",
+      "sha256": "606966335c4ef3517920a0376b50fa339d9944bf2283a5a9ae6e00c54d7a75da",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/X_r0/block1.npz",
+      "destination": "data/memory_15us/X_r0/block1.npz",
+      "sha256": "26355dcda0222dbe4ffa0a67a944be171dbd1779cb7ee0445b314f9871152b4a",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/X_r1/reference.stim",
+      "destination": "data/memory_15us/X_r1/reference.stim",
+      "sha256": "02c3725c953a057a0e4a6d466bce71b526759d54813f6139a87cb5b4b6b71bd0",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/X_r1/model.stim",
+      "destination": "data/memory_15us/X_r1/model.stim",
+      "sha256": "cdd7c4e2c83ee867a2b4eb958f0894ec8c7edcffc4b9bae0516089a542f38175",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/X_r1/model.dem",
+      "destination": "data/memory_15us/X_r1/model.dem",
+      "sha256": "7d72dbbd9b81f50e5a0a70574eb3f769de3a5e2d4694f408897f523437c7764f",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/X_r1/native_instructions.json",
+      "destination": "data/memory_15us/X_r1/native_instructions.json",
+      "sha256": "82b1e62cf709ed279bc5b934714fd0fb0d3c416a6d8bb4ab6cada6274cbfb715",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/X_r1/block0.npz",
+      "destination": "data/memory_15us/X_r1/block0.npz",
+      "sha256": "62af73efb963f146cac0d994f38cc7f3b200d6bb8e503ac5a37bbf50d385a914",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/X_r1/block1.npz",
+      "destination": "data/memory_15us/X_r1/block1.npz",
+      "sha256": "dc142d82a230dd768461df7ecd7f4b3b30056b10cf1dea27e76cba321a1dd852",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/X_r2/reference.stim",
+      "destination": "data/memory_15us/X_r2/reference.stim",
+      "sha256": "afcaff217e10a3320ac56c0371d231ce9b395fa816b192e4ed5174f915712ae4",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/X_r2/model.stim",
+      "destination": "data/memory_15us/X_r2/model.stim",
+      "sha256": "18e5b9e1b235d2b82cf0646752694c88bf6489d455398ee901ed068893c5ec00",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/X_r2/model.dem",
+      "destination": "data/memory_15us/X_r2/model.dem",
+      "sha256": "37cedd391d35dda689db38f68a8122719a2220b558a5f1659537bcb2156e8dbd",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/X_r2/native_instructions.json",
+      "destination": "data/memory_15us/X_r2/native_instructions.json",
+      "sha256": "44b8815ce1c92c9fd92be28b8130523795b607b36638a3a52fceb621a66e7f8a",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/X_r2/block0.npz",
+      "destination": "data/memory_15us/X_r2/block0.npz",
+      "sha256": "cf713f037fea6e1609f93290e8d689f53c9bebcab25769bec6179a3366cfeb32",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/X_r2/block1.npz",
+      "destination": "data/memory_15us/X_r2/block1.npz",
+      "sha256": "4c6fb67dd11e85cf720e5dc065f9c5957cacb9fba1d699037f24bdfee11c615d",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/X_r3/reference.stim",
+      "destination": "data/memory_15us/X_r3/reference.stim",
+      "sha256": "3e082030bfdac6a2ef1a09619aaf47b027ef346b20257233817ab367f87a0888",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/X_r3/model.stim",
+      "destination": "data/memory_15us/X_r3/model.stim",
+      "sha256": "821a377f96a24ea821e0ae17620965bb76e097c00d4e7ebfee9b8fdeb81ff75c",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/X_r3/model.dem",
+      "destination": "data/memory_15us/X_r3/model.dem",
+      "sha256": "a5d07e90300a42a0871d3eb0410f546073f76e303adfe3b1caf96962b5894b04",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/X_r3/native_instructions.json",
+      "destination": "data/memory_15us/X_r3/native_instructions.json",
+      "sha256": "4b85b180e5dd0e28bd1f3edbe3de1df4f71b72aa0220be97b3bb4fb48b92c139",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/X_r3/block0.npz",
+      "destination": "data/memory_15us/X_r3/block0.npz",
+      "sha256": "32b10d9c34c08b5a1f7a98f61f7f4c4e9a5a16a41f135a6d040fb006be7ac2b9",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/X_r3/block1.npz",
+      "destination": "data/memory_15us/X_r3/block1.npz",
+      "sha256": "c19c23d8cee2a857b85c9531540017e5cd3f8d0498d2eb6af3a3abc2a782e288",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/X_single/reference.stim",
+      "destination": "data/memory_15us/X_single/reference.stim",
+      "sha256": "a9e774a7e138c582ec875cc6ebfe53cb32d3b4a6117a0b3eb81198e2e5302b9c",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/X_single/model.stim",
+      "destination": "data/memory_15us/X_single/model.stim",
+      "sha256": "21e59a421eecec9fa0cbb736a7e6c0cbcf17bdafb225d01e377841434529f001",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/X_single/model.dem",
+      "destination": "data/memory_15us/X_single/model.dem",
+      "sha256": "b4e39d7808ef2eff6d52612fe520229a0af3c5e0bd95d870439d7655531d4ff8",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/X_single/native_instructions.json",
+      "destination": "data/memory_15us/X_single/native_instructions.json",
+      "sha256": "65d24392b592b7feb2e3902103512679739e4e13f881aeab991aa20c31ce295d",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/X_single/block0.npz",
+      "destination": "data/memory_15us/X_single/block0.npz",
+      "sha256": "c3c0241cca554ff53ac6433091bbbc008e7b3a95c4d3da67a2ecd97fd17f92a5",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/X_single/block1.npz",
+      "destination": "data/memory_15us/X_single/block1.npz",
+      "sha256": "5192d8425de15873a46682eb94d9be014f8842eaba313f2221ca43bbb32c9161",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/zero_round_preparation/20261025T001506_624673Z/plan.json",
+      "destination": "data/memory_near_zero/plan.json",
+      "sha256": "f8607f94443c4c6c3868380b17fc01fbb4900940fccc752992c920b884a327bb",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/zero_round_preparation/20261025T001506_624673Z/results.json",
+      "destination": "data/memory_near_zero/results.json",
+      "sha256": "47e41ec1516434046a58e5b2832fddb6db1161ed06840c761535d28a740ab73c",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/zero_round_preparation/20261025T001506_624673Z/pre_submission_timing.json",
+      "destination": "data/memory_near_zero/pre_submission_timing.json",
+      "sha256": "19fd4ef5e57c09949ffe16964ea6aa346c27b76566d77896f6d78afd96c06ad3",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/zero_round_preparation/20261025T001506_624673Z/block0_job.json",
+      "destination": "data/memory_near_zero/block0_job.json",
+      "sha256": "7da550687fa73603ee68901f954a0be17ff0dec1de50fa004840c9544aa0c3bc",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/zero_round_preparation/20261025T001506_624673Z/block1_job.json",
+      "destination": "data/memory_near_zero/block1_job.json",
+      "sha256": "552621497c1e05ec781b911f128577a03784a36b4ed75e58c4142a786ed1fe87",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/zero_round_preparation/20261025T001506_624673Z/block0_status.json",
+      "destination": "data/memory_near_zero/block0_status.json",
+      "sha256": "fa764fb0ab2016ae7cd8056d96a465a76eca2d20627097b5be7d09d397602376",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/zero_round_preparation/20261025T001506_624673Z/block1_status.json",
+      "destination": "data/memory_near_zero/block1_status.json",
+      "sha256": "5ca1384556f3fda92b1a3f8cf03093c6321b46cd39e65f07cd99d6dcf9e028d2",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/zero_round_preparation/20261025T001506_624673Z/Z_r0_near0/reference.stim",
+      "destination": "data/memory_near_zero/Z_r0_near0/reference.stim",
+      "sha256": "d9a60c719c270674d54cf3833f2ecf58fd28d77d880f65de31ed386407f9f233",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/zero_round_preparation/20261025T001506_624673Z/Z_r0_near0/model.stim",
+      "destination": "data/memory_near_zero/Z_r0_near0/model.stim",
+      "sha256": "566f546c4592a2f9ebc69c86365179b58117b19dfd717a88410f3f1fb6f6d198",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/zero_round_preparation/20261025T001506_624673Z/Z_r0_near0/model.dem",
+      "destination": "data/memory_near_zero/Z_r0_near0/model.dem",
+      "sha256": "8a220e9da5456d19114f33727bfd85ac26364a2d34a55b68361679acccd299db",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/zero_round_preparation/20261025T001506_624673Z/Z_r0_near0/native_instructions.json",
+      "destination": "data/memory_near_zero/Z_r0_near0/native_instructions.json",
+      "sha256": "69fb074f441a6c28dc5312ec888f094a259866a2c46df5c3960cdaad3470c6d7",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/zero_round_preparation/20261025T001506_624673Z/Z_r0_near0/block0.npz",
+      "destination": "data/memory_near_zero/Z_r0_near0/block0.npz",
+      "sha256": "f459ab1318de4283e44a7f9ae17c3cabcf8d525637ac90d7c7d9e15ac2717916",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/zero_round_preparation/20261025T001506_624673Z/Z_r0_near0/block1.npz",
+      "destination": "data/memory_near_zero/Z_r0_near0/block1.npz",
+      "sha256": "6bc5dcca45ffc85de0c90f5804f63c9a201850df9ec40a49d57892415ab8f749",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/zero_round_preparation/20261025T001506_624673Z/X_r0_near0/reference.stim",
+      "destination": "data/memory_near_zero/X_r0_near0/reference.stim",
+      "sha256": "cee24fb18e773be1f00820db3bf8d3c1ebdeab7b8cb097cc824a05f4cec062b9",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/zero_round_preparation/20261025T001506_624673Z/X_r0_near0/model.stim",
+      "destination": "data/memory_near_zero/X_r0_near0/model.stim",
+      "sha256": "8ca5f11ee7215c4ff3910c3523e51ed0215f131b07146f571ec72514d57e3845",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/zero_round_preparation/20261025T001506_624673Z/X_r0_near0/model.dem",
+      "destination": "data/memory_near_zero/X_r0_near0/model.dem",
+      "sha256": "4c11c66700745bc44a70d55dc924523b73f4b7841562701e86fc28140f3ece68",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/zero_round_preparation/20261025T001506_624673Z/X_r0_near0/native_instructions.json",
+      "destination": "data/memory_near_zero/X_r0_near0/native_instructions.json",
+      "sha256": "63b76fc2c3d6d5cc9042e52aa634ab2a76bb36aea95c58bb99f98334b4bb90cf",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/zero_round_preparation/20261025T001506_624673Z/X_r0_near0/block0.npz",
+      "destination": "data/memory_near_zero/X_r0_near0/block0.npz",
+      "sha256": "ea196028bb33825c37c9e11377a4a9c563a93ab5c3147827a53fdbf2f54a9bba",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/zero_round_preparation/20261025T001506_624673Z/X_r0_near0/block1.npz",
+      "destination": "data/memory_near_zero/X_r0_near0/block1.npz",
+      "sha256": "286ec500ea2c0650fec274b7c8b61ea79ccee3b86457d197fb1492f55ebd5ebf",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/zero_round_5us/20261025T002004_576877Z/plan.json",
+      "destination": "data/memory_5us/plan.json",
+      "sha256": "8ff1cd2a25a76d8a8980c7a9a4195b9c6d94ff45b70b4fe3b12e1214c1231e60",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/zero_round_5us/20261025T002004_576877Z/results.json",
+      "destination": "data/memory_5us/results.json",
+      "sha256": "14172adb912609db55aac17b186d70181be2433a3a03f18fac93ce1dd5b280c2",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/zero_round_5us/20261025T002004_576877Z/pre_submission_timing.json",
+      "destination": "data/memory_5us/pre_submission_timing.json",
+      "sha256": "c6fa3088281b070b9c12bfa06bd4ce29ac678daec9590b71ff2259f570e96622",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/zero_round_5us/20261025T002004_576877Z/block0_job.json",
+      "destination": "data/memory_5us/block0_job.json",
+      "sha256": "4e4cf99fc4f84f7db39c764a53898a5b41f066e879121965e91309899c3f3832",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/zero_round_5us/20261025T002004_576877Z/block1_job.json",
+      "destination": "data/memory_5us/block1_job.json",
+      "sha256": "c8aa5c875551c9a62e8911b2bd82d3a8bbe1a522e93be57a11eeff1c39df25dd",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/zero_round_5us/20261025T002004_576877Z/block0_status.json",
+      "destination": "data/memory_5us/block0_status.json",
+      "sha256": "64b9ccafcca5c6430e833893cc51f8c5ee903a916aea065201c7cb2e1b6d2530",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/zero_round_5us/20261025T002004_576877Z/block1_status.json",
+      "destination": "data/memory_5us/block1_status.json",
+      "sha256": "333874a9e37e3625278d80ab697e825697847a84ab9ddbcbdf84326f35a206d4",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/zero_round_5us/20261025T002004_576877Z/Z_r0_5us/reference.stim",
+      "destination": "data/memory_5us/Z_r0_5us/reference.stim",
+      "sha256": "d9a60c719c270674d54cf3833f2ecf58fd28d77d880f65de31ed386407f9f233",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/zero_round_5us/20261025T002004_576877Z/Z_r0_5us/model.stim",
+      "destination": "data/memory_5us/Z_r0_5us/model.stim",
+      "sha256": "b2bced9b70f2558225cbcd2586d5f19bd5d7caf4010b134f28bea56d9d820499",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/zero_round_5us/20261025T002004_576877Z/Z_r0_5us/model.dem",
+      "destination": "data/memory_5us/Z_r0_5us/model.dem",
+      "sha256": "1d9fd5fffa633241125a71f6d44f03fbbb65e71977b325ff8fcf9e9388b81eb4",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/zero_round_5us/20261025T002004_576877Z/Z_r0_5us/native_instructions.json",
+      "destination": "data/memory_5us/Z_r0_5us/native_instructions.json",
+      "sha256": "be735c4ab252b1211fa6394d139f1b7ce390d2f1172386e46edd8f221a088a78",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/zero_round_5us/20261025T002004_576877Z/Z_r0_5us/block0.npz",
+      "destination": "data/memory_5us/Z_r0_5us/block0.npz",
+      "sha256": "1fe055bebffd8de67fc0561ac183d2ae0b0c06911b0f1d3515fa7765b1edec48",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/zero_round_5us/20261025T002004_576877Z/Z_r0_5us/block1.npz",
+      "destination": "data/memory_5us/Z_r0_5us/block1.npz",
+      "sha256": "3c548092f79e7117bf4007652bbda37881bbddbe99204556665fe514f9ca3234",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/zero_round_5us/20261025T002004_576877Z/X_r0_5us/reference.stim",
+      "destination": "data/memory_5us/X_r0_5us/reference.stim",
+      "sha256": "cee24fb18e773be1f00820db3bf8d3c1ebdeab7b8cb097cc824a05f4cec062b9",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/zero_round_5us/20261025T002004_576877Z/X_r0_5us/model.stim",
+      "destination": "data/memory_5us/X_r0_5us/model.stim",
+      "sha256": "bb0531e129bae4f1532364a70b37d614054edce4d7285f09d16a83c74f9bb2b2",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/zero_round_5us/20261025T002004_576877Z/X_r0_5us/model.dem",
+      "destination": "data/memory_5us/X_r0_5us/model.dem",
+      "sha256": "794a1ebf0a6ee1603196335c1a7e55849142044b7ed66b7270d30189ecd814df",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/zero_round_5us/20261025T002004_576877Z/X_r0_5us/native_instructions.json",
+      "destination": "data/memory_5us/X_r0_5us/native_instructions.json",
+      "sha256": "57e1ea6915131b7027b0c82e9c8eea3d6b3080fa24924d552261a1c54b8f9b42",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/zero_round_5us/20261025T002004_576877Z/X_r0_5us/block0.npz",
+      "destination": "data/memory_5us/X_r0_5us/block0.npz",
+      "sha256": "eb8c6036c984fdf9ba82165ef2772216a7c0ca0a36daecabc08f2ace810dec42",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/zero_round_5us/20261025T002004_576877Z/X_r0_5us/block1.npz",
+      "destination": "data/memory_5us/X_r0_5us/block1.npz",
+      "sha256": "fd9985a6b61b210738e9009edecf059a3f4cd3486dd063ff2e4e0d7c6dba6edd",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/fixed_duration_memory/20261025T000253_872440Z/ler_vs_rounds.png",
+      "destination": "plots/memory_15us_original.png",
+      "sha256": "e55ef4851a5f4431528fa09a760b4d9eac5f2f6c7d8295cf8986be07440b1cbe",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/rounds_storage/20261024T224558_492023Z/plan.json",
+      "destination": "data/source_patch/plan.json",
+      "sha256": "750fdaebdb879258a78263b11275bd5f489917e11b5056ab1434220fb332b0c6",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/rounds_storage/20261024T224558_492023Z/architecture.json",
+      "destination": "data/source_patch/architecture.json",
+      "sha256": "df51b49ae3a48f07c90568a5baeabba96188648ca27fd5edebad4a8b0aa3e30f",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/downloaded_jobs/01a16fc6-72f2-7186-9112-3ea5083a060f/zero_swap_verification.json",
+      "destination": "evidence/historical_zero_swap/zero_swap_verification.json",
+      "sha256": "23d6665897334c5a424218585e01f64747e9e9ce073c72d21971079a749f9195",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/downloaded_jobs/01a16fc6-72f2-7186-9112-3ea5083a060f/submitted_circuits.json",
+      "destination": "evidence/historical_zero_swap/submitted_circuits.json",
+      "sha256": "b0990076313c084058d236d6c9723d2e3d76fe9797c35530a79a2bf0e169355c",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/downloaded_jobs/01a16fc6-72f2-7186-9112-3ea5083a060f/architecture.json",
+      "destination": "evidence/historical_zero_swap/architecture.json",
+      "sha256": "df51b49ae3a48f07c90568a5baeabba96188648ca27fd5edebad4a8b0aa3e30f",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/downloaded_jobs/01a16fc6-72f2-7186-9112-3ea5083a060f/parameters.json",
+      "destination": "evidence/historical_zero_swap/parameters.json",
+      "sha256": "1b377a336742569616bfbe05c8ab58a212c9e59ed882b698521890bdfbdc3035",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/offline_audits/x_memory_5us_vs_15us/audit.json",
+      "destination": "evidence/x_memory_idle_audit/audit.json",
+      "sha256": "a42c33bb7c855304b77ec411735604b6b7a73eb77b4e072fa674eb0faa0c4773",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": "diagnostics/results/offline_audits/x_memory_5us_vs_15us/analysis.md",
+      "destination": "evidence/x_memory_idle_audit/analysis.md",
+      "sha256": "b1e19733d85534ee55c5c8afe8e1b1a67793223055ee71dedfc13a03c128e458",
+      "mode": "byte-identical copy"
+    },
+    {
+      "source": null,
+      "destination": "code/reproduce_analysis.py",
+      "mode": "new offline analysis",
+      "changes": [
+        "Recompute measured results and plots; validate copied archives and direct no-routing circuit recipes; no new shot samples or experiments."
+      ]
+    }
+  ],
+  "note": "Archived measured result files are byte-identical copies. Original absolute paths inside metadata are preserved as provenance only; portable code uses submission-local data.",
+  "function_body_checks": [
+    {
+      "source": "surface_code.py",
+      "destination": "code/surface_code.py",
+      "function": "make_stim_circuit",
+      "executable_ast_equal": true
+    },
+    {
+      "source": "surface_code.py",
+      "destination": "code/surface_code.py",
+      "function": "_remove_round_resets",
+      "executable_ast_equal": true
+    },
+    {
+      "source": "diagnostics/encoded_zero_round.py",
+      "destination": "code/geometry.py",
+      "function": "description",
+      "executable_ast_equal": true
+    },
+    {
+      "source": "diagnostics/compare_rounds_storage.py",
+      "destination": "code/utilities.py",
+      "function": "extract",
+      "executable_ast_equal": true
+    },
+    {
+      "source": "diagnostics/compare_rounds_storage.py",
+      "destination": "code/utilities.py",
+      "function": "interval",
+      "executable_ast_equal": true
+    },
+    {
+      "source": "diagnostics/compare_rounds_storage.py",
+      "destination": "code/utilities.py",
+      "function": "ideal_raw",
+      "executable_ast_equal": true
+    },
+    {
+      "source": "diagnostics/check_measurement_crosstalk.py",
+      "destination": "code/utilities.py",
+      "function": "collect_job_results",
+      "executable_ast_equal": true
+    },
+    {
+      "source": "diagnostics/fixed_duration_memory.py",
+      "destination": "code/memory_benchmark.py",
+      "function": "logical_support",
+      "executable_ast_equal": true
+    },
+    {
+      "source": "diagnostics/fixed_duration_memory.py",
+      "destination": "code/memory_benchmark.py",
+      "function": "encoder",
+      "executable_ast_equal": true
+    },
+    {
+      "source": "diagnostics/fixed_duration_memory.py",
+      "destination": "code/memory_benchmark.py",
+      "function": "round_body",
+      "executable_ast_equal": true
+    },
+    {
+      "source": "diagnostics/fixed_duration_memory.py",
+      "destination": "code/memory_benchmark.py",
+      "function": "check_encoded_state",
+      "executable_ast_equal": true
+    },
+    {
+      "source": "diagnostics/fixed_duration_memory.py",
+      "destination": "code/memory_benchmark.py",
+      "function": "preparation_check",
+      "executable_ast_equal": true
+    },
+    {
+      "source": "diagnostics/fixed_duration_memory.py",
+      "destination": "code/memory_benchmark.py",
+      "function": "native_preparation_check",
+      "executable_ast_equal": true
+    },
+    {
+      "source": "diagnostics/fixed_duration_memory.py",
+      "destination": "code/memory_benchmark.py",
+      "function": "with_gate_noise",
+      "executable_ast_equal": true
+    },
+    {
+      "source": "diagnostics/fixed_duration_memory.py",
+      "destination": "code/memory_benchmark.py",
+      "function": "model",
+      "executable_ast_equal": true
+    },
+    {
+      "source": "diagnostics/fixed_duration_memory.py",
+      "destination": "code/memory_benchmark.py",
+      "function": "operation",
+      "executable_ast_equal": true
+    },
+    {
+      "source": "diagnostics/fixed_duration_memory.py",
+      "destination": "code/memory_benchmark.py",
+      "function": "lower_unitary",
+      "executable_ast_equal": true
+    },
+    {
+      "source": "diagnostics/fixed_duration_memory.py",
+      "destination": "code/memory_benchmark.py",
+      "function": "memory_operations",
+      "executable_ast_equal": true
+    },
+    {
+      "source": "diagnostics/fixed_duration_memory.py",
+      "destination": "code/memory_benchmark.py",
+      "function": "instructions",
+      "executable_ast_equal": true
+    },
+    {
+      "source": "diagnostics/fixed_duration_memory.py",
+      "destination": "code/memory_benchmark.py",
+      "function": "make_arms",
+      "executable_ast_equal": true
+    },
+    {
+      "source": "diagnostics/fixed_duration_memory.py",
+      "destination": "code/memory_benchmark.py",
+      "function": "native_circuits",
+      "executable_ast_equal": true
+    },
+    {
+      "source": "diagnostics/fixed_duration_memory.py",
+      "destination": "code/memory_benchmark.py",
+      "function": "validate",
+      "executable_ast_equal": true
+    },
+    {
+      "source": "diagnostics/fixed_duration_memory.py",
+      "destination": "code/memory_benchmark.py",
+      "function": "compile_durations",
+      "executable_ast_equal": true
+    },
+    {
+      "source": "diagnostics/fixed_duration_memory.py",
+      "destination": "code/memory_benchmark.py",
+      "function": "fit_timing",
+      "executable_ast_equal": true
+    },
+    {
+      "source": "diagnostics/fixed_duration_memory.py",
+      "destination": "code/memory_benchmark.py",
+      "function": "timing_self_test",
+      "executable_ast_equal": true
+    },
+    {
+      "source": "diagnostics/fixed_duration_memory.py",
+      "destination": "code/memory_benchmark.py",
+      "function": "check_mapping",
+      "executable_ast_equal": true
+    },
+    {
+      "source": "diagnostics/fixed_duration_memory.py",
+      "destination": "code/memory_benchmark.py",
+      "function": "get_compiler",
+      "executable_ast_equal": true
+    },
+    {
+      "source": "diagnostics/fixed_duration_memory.py",
+      "destination": "code/memory_benchmark.py",
+      "function": "analyze",
+      "executable_ast_equal": true
+    },
+    {
+      "source": "diagnostics/fixed_duration_memory.py",
+      "destination": "code/memory_benchmark.py",
+      "function": "execute",
+      "executable_ast_equal": true
+    },
+    {
+      "source": "diagnostics/check_zero_round_preparation.py",
+      "destination": "code/zero_round.py",
+      "function": "signature",
+      "executable_ast_equal": true
+    },
+    {
+      "source": "diagnostics/check_zero_round_preparation.py",
+      "destination": "code/zero_round.py",
+      "function": "make_cases",
+      "executable_ast_equal": true
+    },
+    {
+      "source": "diagnostics/check_zero_round_preparation.py",
+      "destination": "code/zero_round.py",
+      "function": "validate",
+      "executable_ast_equal": true
+    },
+    {
+      "source": "diagnostics/check_zero_round_preparation.py",
+      "destination": "code/zero_round.py",
+      "function": "verify_timing",
+      "executable_ast_equal": true
+    },
+    {
+      "source": "diagnostics/check_zero_round_preparation.py",
+      "destination": "code/zero_round.py",
+      "function": "score_interval",
+      "executable_ast_equal": true
+    },
+    {
+      "source": "diagnostics/check_zero_round_preparation.py",
+      "destination": "code/zero_round.py",
+      "function": "analyze",
+      "executable_ast_equal": true
+    },
+    {
+      "source": "diagnostics/check_zero_round_preparation.py",
+      "destination": "code/zero_round.py",
+      "function": "execute",
+      "executable_ast_equal": true
+    }
+  ]
+}

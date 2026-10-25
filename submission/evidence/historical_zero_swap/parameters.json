@@ -1,0 +1,12 @@
+{
+  "max_circuit_duration_over_t2": null,
+  "heralding_mode": "none",
+  "move_gate_validation": "strict",
+  "move_gate_frame_tracking": "full",
+  "active_reset_cycles": null,
+  "dd_mode": "disabled",
+  "dd_strategy": null,
+  "shots": 1000,
+  "calibration_set_id": "23e12f6b-c23c-4736-8736-b0142989c0e6",
+  "qubit_mapping": null
+}

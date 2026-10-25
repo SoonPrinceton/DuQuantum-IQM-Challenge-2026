@@ -160,5 +160,7 @@ if __name__ == "__main__":
     print(f"code distance (graphlike) = "
           f"{len(c.shortest_graphlike_error())}\n")
     sanity_check_stim2qrisp(rounds=3)
-    sanity_check_no_noise(rounds=3, no_reset=True, shots=1000, verbose=True)
-    sanity_check_single_pauli(rounds=3, no_reset=True, shots=16, verbose=True)
+    sanity_check_no_noise(rounds=3, no_reset=True, shots=1000, verbose=False)
+    sanity_check_single_pauli(rounds=3, no_reset=True, shots=16, verbose=False)
+    logical_error = logical_error_rate(c, shots=1_000)
+    print(f"Logical error probability: {logical_error:.4e}")

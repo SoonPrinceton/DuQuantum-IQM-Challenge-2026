@@ -1,0 +1,8 @@
+# Offline analysis and optional ideal-circuit checks; observed local versions.
+numpy==2.4.6
+stim==1.16.0
+pymatching==2.4.0
+matplotlib==3.11.2
+scipy==1.18.1
+qiskit==2.1.2
+qiskit-aer==0.17.2
