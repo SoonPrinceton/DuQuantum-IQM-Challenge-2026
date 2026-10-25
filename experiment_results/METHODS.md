@@ -189,28 +189,17 @@ rate. No pulse implementation is modified.
 Source acknowledgements and exact extraction details are in `PROVENANCE.json`.
 The original project and `diagnostics/` remain unchanged.
 
-## Earlier component comparison
+## Updated component comparison
 
-`COMPONENT_CONTROLS.md` and `plots/component_controls.png` compare 1 round + idle,
-1 round + 48 extra CZ echo gates, 1 round + 16 extra ancilla measurements and
-3 rounds. These are the earlier Z-memory circuits with their original preparation
-convention and primary DEMs; they are not redefined as the later common unitary
-encoder or as 15 μs memory-window experiments.
+| Control | Failures / shots | Decoded LER | Raw parity error |
+|---|---:|---:|---:|
+| 1 round + idle | 279/2000 | 13.95% | 32.30% |
+| 1 round + CZ echo | 285/2000 | 14.25% | 30.85% |
+| 1 round + repeated ancilla measurement | 250/2000 | 12.50% | 29.50% |
+| 3 rounds (historical) | 651/2000 | 32.55% | 41.70% |
 
-Their full local schedule durations are 410.872, 410.876, 410.872 and 410.872 μs;
-padding is respectively 8.240, 7.904, 6.168 and 0 μs. Isolated preparation/memory/
-readout boundaries were not archived, so their CSV fields remain blank. All
-physical CZ edges match the saved calibration, and input sequences are reproduced
-from the original fixed-patch source plus the specified interventions.
-
-The one-round primary DEMs are identical. Extra CZs are ideal identity pairs;
-extra Z measurements read already-measured ancillas without H or data coupling.
-Those 16 auxiliary bits are archived in their original named-key JSON, checked
-against the main measurement matrices and excluded from the decoder by design.
-
-All four original failure counts, per-shot predictions and Wilson intervals are
-reproduced. Derived contrasts use independent shots, Newcombe/Wilson difference
-intervals and Fisher tests with Holm correction across the **three displayed
-contrasts**. The original five-arm metadata/statistics remain unchanged; their
-historical contrast family also included the omitted unencoded zero-round arm.
-Non-significant echo/readout contrasts are not equivalence demonstrations.
+The three one-round arms were remeasured with shorter padding, matching the historical three-round **first complete syndrome record → final data-readout barrier** interval to approximately 5.348 μs.
+The three-round measurement data are reused, not remeasured. These are different acquisitions; shared calibration does not eliminate drift.
+**This is record-window matching, not a verified common independent encoded-state preparation boundary.** The three-round circuit is pipelined.
+The previous full-schedule-matched data are preserved under `evidence/previous_component_controls/`. Full original metadata for both acquisitions are in `data/component_controls/acquisition_sets/`.
+See [COMPONENT_CONTROLS.md](COMPONENT_CONTROLS.md) for confidence intervals, timing and contrasts.

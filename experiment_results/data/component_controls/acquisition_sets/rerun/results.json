@@ -1,0 +1,90 @@
+{
+  "metadata": {
+    "device": "emerald",
+    "calibration_set_id": "23e12f6b-c23c-4736-8736-b0142989c0e6",
+    "layout": {
+      "14": "QB3",
+      "2": "QB2",
+      "9": "QB5",
+      "11": "QB12",
+      "16": "QB10",
+      "25": "QB26",
+      "18": "QB19",
+      "13": "QB21",
+      "3": "QB6",
+      "15": "QB9",
+      "19": "QB27",
+      "1": "QB1",
+      "8": "QB4",
+      "17": "QB18",
+      "5": "QB13",
+      "10": "QB11",
+      "12": "QB20"
+    },
+    "shots_per_arm_per_block": 1000,
+    "blocks": 2,
+    "correlated": false,
+    "source_run": "/Users/soonprinceton/Projects/DuQuantum-IQM-Challenge-2026/diagnostics/results/round_components/20261024T233022_874051Z",
+    "source_plan_sha256": "0d6b5e63657b92ef43dfaa2fdd1ea5f8441afcf0f0e6314463af8abf3ab504d8",
+    "tolerance_ns": 8.0,
+    "target_record_window_ns": 5348.0,
+    "matching_definition": "First complete syndrome-readout trigger ends -> original global barrier before final data readout; NOT a shared independent encoded-state preparation boundary",
+    "historical_r3_reused": true,
+    "hardware_arm_names": [
+      "r1_idle",
+      "r1_cz_echo",
+      "r1_ancilla_measure"
+    ],
+    "limitations": [
+      "Three-round reference is pipelined; its first complete record is not a common independent encoding boundary.",
+      "New one-round shots and historical three-round shots are separate acquisitions; drift remains possible.",
+      "Current local controller settings with pinned historical gate calibration; not server timing verification.",
+      "Original primary one-round DEMs are frozen; extra CZ/readout/padding noise is not separately fitted."
+    ]
+  },
+  "summary": {
+    "r1_idle": {
+      "shots": 2000,
+      "failures": 279,
+      "raw_flips": 646,
+      "decoder": "PyMatching",
+      "p_error": 0.1395,
+      "wilson95": [
+        0.12500559293773536,
+        0.155376598152048
+      ],
+      "raw_probability": 0.323
+    },
+    "r1_cz_echo": {
+      "shots": 2000,
+      "failures": 285,
+      "raw_flips": 617,
+      "decoder": "PyMatching",
+      "p_error": 0.1425,
+      "wilson95": [
+        0.1278647408518039,
+        0.15850594795429188
+      ],
+      "raw_probability": 0.3085
+    },
+    "r1_ancilla_measure": {
+      "shots": 2000,
+      "failures": 250,
+      "raw_flips": 590,
+      "decoder": "PyMatching",
+      "p_error": 0.125,
+      "wilson95": [
+        0.1112208289581945,
+        0.14021695650274513
+      ],
+      "raw_probability": 0.295
+    }
+  },
+  "historical_reference": "r3 from /Users/soonprinceton/Projects/DuQuantum-IQM-Challenge-2026/diagnostics/results/round_components/20261024T233022_874051Z",
+  "hardware_arm_names": [
+    "r1_idle",
+    "r1_cz_echo",
+    "r1_ancilla_measure"
+  ],
+  "matching_definition": "First complete syndrome-readout trigger ends -> original global barrier before final data readout; NOT a shared independent encoded-state preparation boundary"
+}

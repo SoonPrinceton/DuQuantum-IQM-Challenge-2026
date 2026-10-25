@@ -66,25 +66,25 @@ $15\,\mu\mathrm{s}$ & 25.10\% & 48.50\%\\
 \end{center}
 \vspace{-15pt}
 \section*{Component-control experiment (separate Z-memory run)}
-We also compared a one-round baseline against added CZ echoes, repeated ancilla measurements, and a full three-round extraction circuit. These controls came from an earlier Z-memory experiment with a different preparation protocol; they should be compared \emph{within this experiment}, not pooled with the fixed-$15\,\mu$s benchmark above. The locally compiled full schedules were matched within $4\,$ns, including preparation and readout.
+The three one-round controls were remeasured with shorter idle delays to match the historical three-round interval from the first complete syndrome record to the final-readout boundary: approximately $5.348\,\mu\mathrm{s}$. The three-round measurement is reused unchanged. This is a separate Z-memory comparison, not the fixed-$15\,\mu$s benchmark; the pipelined three-round circuit has no verified common independent encoding boundary. The acquisitions occurred in different jobs, so drift remains possible.
 \begin{table}[h]
 \centering\small
 \begin{tabular}{lrrr}
 \toprule
 \textbf{Circuit} & \textbf{Decoded LER (95\% CI)} & \textbf{CZ count} & \textbf{Shots}\\
 \midrule
-1 round + idle & 18.75\% (17.10--20.52) & 19 & 2,000\\
-1 round + CZ echo & 19.70\% (18.02--21.50) & 67 & 2,000\\
-1 round + ancilla measurements & 18.30\% (16.67--20.05) & 19 & 2,000\\
+1 round + idle & 13.95\% (12.50--15.54) & 19 & 2,000\\
+1 round + CZ echo & 14.25\% (12.79--15.85) & 67 & 2,000\\
+1 round + ancilla measurements & 12.50\% (11.12--14.02) & 19 & 2,000\\
 3 complete rounds & \textbf{32.55\%} (30.53--34.64) & 67 & 2,000\\
 \bottomrule
 \end{tabular}
-\caption{Hardware component controls; 2,000 shots per arm. Extra CZ gates were paired echoes; auxiliary ancilla measurements were not included in the decoder.}
+\caption{Remeasured one-round controls and the historical three-round reference; 2,000 shots per arm. Extra CZ gates were paired echoes; auxiliary ancilla measurements were not included in the decoder.}
 \end{table}
-The three-round LER exceeded the one-round-plus-idle baseline by \textbf{13.80 percentage points} (unadjusted 95\% CI: 11.12--16.46). Neither isolated CZ echoes (+0.95 pp) nor auxiliary ancilla measurements ($-0.45$ pp) showed a detectable difference from the idle control. Thus, the full extraction sequence is substantially more damaging than either tested intervention alone; these controls do not uniquely identify the underlying noise mechanism.
+The measured three-round-minus-idle LER difference is +18.60 percentage points (95\% difference interval +16.03 to +21.14). These controls do not uniquely identify a physical noise mechanism. The CZ-echo and repeated-ancilla-readout differences were +0.30 and -1.45 percentage points, respectively. Neither contrast was statistically detected after Holm correction over the three comparisons.
 
 \section*{Discussion and takeaway}
-At fixed $15\,\mu$s storage, added extraction rounds increased Z-memory LER but did not improve X-memory. In the separate schedule-matched component controls, full three-round extraction raised Z error by 13.80 percentage points relative to one round plus idle, whereas the tested isolated CZ-echo and ancilla-measurement additions produced no detectable changes. The component tests do not isolate a unique physical noise source. Near-zero storage errors of only 2--3\% point to substantial memory-interval degradation. Overall, the tested encoded memories did not beat unencoded qubits. Zero-SWAP mapping was verified and decoder parameter tuning gave limited improvements; other decoders and noise models remain worth exploring.
+At fixed $15\,\mu$s storage, added extraction rounds increased Z-memory LER but did not improve X-memory. In the updated record-window-matched comparison, the measured three-round-minus-idle LER difference is +18.60 percentage points (95\% difference interval +16.03 to +21.14). These controls do not uniquely identify a physical noise mechanism. Near-zero storage errors of only 2--3\% point to substantial memory-interval degradation. Overall, the tested encoded memories did not beat unencoded qubits. Zero-SWAP mapping was verified and decoder parameter tuning gave limited improvements; other decoders and noise models remain worth exploring.
 
 \vfill
 {\footnotesize\color{gray}Source: provided \texttt{submission(1).zip}, especially \texttt{METHODS.md}, \texttt{RESULTS.md}, \texttt{validation.json}, and archived measurement tables. Figures are reproduced from the submission package.}

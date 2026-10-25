@@ -7,14 +7,14 @@
       "kind": "legacy_Z_memory_component_control",
       "rounds": 1,
       "shots": 2000,
-      "failures": 375,
-      "ler": 0.1875,
-      "wilson95_low": 0.1709991046047915,
-      "wilson95_high": 0.20519904994599153,
-      "raw_flips": 669,
-      "raw_probability": 0.3345,
+      "failures": 279,
+      "ler": 0.1395,
+      "wilson95_low": 0.12500559293773536,
+      "wilson95_high": 0.155376598152048,
+      "raw_flips": 646,
+      "raw_probability": 0.323,
       "calibration_set_id": "23e12f6b-c23c-4736-8736-b0142989c0e6",
-      "job_ids": "01a17041-62a1-778f-9e58-9c40ba51bb23|01a17041-8b1c-746f-b71e-91cecab3622e"
+      "job_ids": "01a170ea-4fce-760e-add7-3cf99a24d4f1|01a170ea-65b8-76a6-8b90-8d5a2ce48469"
     },
     {
       "dataset": "component_controls",
@@ -23,14 +23,14 @@
       "kind": "legacy_Z_memory_component_control",
       "rounds": 1,
       "shots": 2000,
-      "failures": 394,
-      "ler": 0.197,
-      "wilson95_low": 0.18015682931283034,
-      "wilson95_high": 0.21500490133960892,
-      "raw_flips": 710,
-      "raw_probability": 0.355,
+      "failures": 285,
+      "ler": 0.1425,
+      "wilson95_low": 0.1278647408518039,
+      "wilson95_high": 0.15850594795429188,
+      "raw_flips": 617,
+      "raw_probability": 0.3085,
       "calibration_set_id": "23e12f6b-c23c-4736-8736-b0142989c0e6",
-      "job_ids": "01a17041-62a1-778f-9e58-9c40ba51bb23|01a17041-8b1c-746f-b71e-91cecab3622e"
+      "job_ids": "01a170ea-4fce-760e-add7-3cf99a24d4f1|01a170ea-65b8-76a6-8b90-8d5a2ce48469"
     },
     {
       "dataset": "component_controls",
@@ -39,14 +39,14 @@
       "kind": "legacy_Z_memory_component_control",
       "rounds": 1,
       "shots": 2000,
-      "failures": 366,
-      "ler": 0.183,
-      "wilson95_low": 0.16666695547445123,
-      "wilson95_high": 0.20054845250186307,
-      "raw_flips": 689,
-      "raw_probability": 0.3445,
+      "failures": 250,
+      "ler": 0.125,
+      "wilson95_low": 0.1112208289581945,
+      "wilson95_high": 0.14021695650274513,
+      "raw_flips": 590,
+      "raw_probability": 0.295,
       "calibration_set_id": "23e12f6b-c23c-4736-8736-b0142989c0e6",
-      "job_ids": "01a17041-62a1-778f-9e58-9c40ba51bb23|01a17041-8b1c-746f-b71e-91cecab3622e"
+      "job_ids": "01a170ea-4fce-760e-add7-3cf99a24d4f1|01a170ea-65b8-76a6-8b90-8d5a2ce48469"
     },
     {
       "dataset": "component_controls",
@@ -69,56 +69,56 @@
     {
       "dataset": "component_controls",
       "arm": "r1_idle",
-      "requested_memory_ns": "",
-      "compiled_memory_ns": "",
+      "requested_memory_ns": 5348.0,
+      "compiled_memory_ns": 5348.0,
       "initialization_ns": "",
       "state_preparation_ns": "",
       "final_readout_ns": "",
-      "full_schedule_ns": 410872.0,
-      "idle_slots_ns": "[8240.0]",
+      "full_schedule_ns": 407980.0,
+      "idle_slots_ns": "[5348.0]",
       "native_prx": 38,
       "native_cz": 19,
       "native_measurements": 17,
-      "target_full_schedule_ns": 410872.0,
-      "timing_definition": "Full schedule matched; separate memory boundaries not archived"
+      "target_full_schedule_ns": "",
+      "timing_definition": "First complete syndrome record to pre-readout barrier; NOT a shared independent encoded-state boundary"
     },
     {
       "dataset": "component_controls",
       "arm": "r1_cz_echo",
-      "requested_memory_ns": "",
-      "compiled_memory_ns": "",
+      "requested_memory_ns": 5348.0,
+      "compiled_memory_ns": 5344.0,
       "initialization_ns": "",
       "state_preparation_ns": "",
       "final_readout_ns": "",
-      "full_schedule_ns": 410876.0,
-      "idle_slots_ns": "[7904.0]",
+      "full_schedule_ns": 407976.0,
+      "idle_slots_ns": "[5008.0]",
       "native_prx": 38,
       "native_cz": 67,
       "native_measurements": 17,
-      "target_full_schedule_ns": 410872.0,
-      "timing_definition": "Full schedule matched; separate memory boundaries not archived"
+      "target_full_schedule_ns": "",
+      "timing_definition": "First complete syndrome record to pre-readout barrier; NOT a shared independent encoded-state boundary"
     },
     {
       "dataset": "component_controls",
       "arm": "r1_ancilla_measure",
-      "requested_memory_ns": "",
-      "compiled_memory_ns": "",
+      "requested_memory_ns": 5348.0,
+      "compiled_memory_ns": 5348.0,
       "initialization_ns": "",
       "state_preparation_ns": "",
       "final_readout_ns": "",
-      "full_schedule_ns": 410872.0,
-      "idle_slots_ns": "[6168.0]",
+      "full_schedule_ns": 407980.0,
+      "idle_slots_ns": "[3276.0]",
       "native_prx": 38,
       "native_cz": 19,
       "native_measurements": 33,
-      "target_full_schedule_ns": 410872.0,
-      "timing_definition": "Full schedule matched; separate memory boundaries not archived"
+      "target_full_schedule_ns": "",
+      "timing_definition": "First complete syndrome record to pre-readout barrier; NOT a shared independent encoded-state boundary"
     },
     {
       "dataset": "component_controls",
       "arm": "r3",
-      "requested_memory_ns": "",
-      "compiled_memory_ns": "",
+      "requested_memory_ns": 5348.0,
+      "compiled_memory_ns": 5348.0,
       "initialization_ns": "",
       "state_preparation_ns": "",
       "final_readout_ns": "",
@@ -127,8 +127,8 @@
       "native_prx": 106,
       "native_cz": 67,
       "native_measurements": 33,
-      "target_full_schedule_ns": 410872.0,
-      "timing_definition": "Full schedule matched; separate memory boundaries not archived"
+      "target_full_schedule_ns": "",
+      "timing_definition": "First complete syndrome record to pre-readout barrier; NOT a shared independent encoded-state boundary"
     }
   ],
   "analysis": {
@@ -146,14 +146,14 @@
           {
             "block": 0,
             "shots": 1000,
-            "failures": 197,
-            "raw_flips": 366
+            "failures": 141,
+            "raw_flips": 310
           },
           {
             "block": 1,
             "shots": 1000,
-            "failures": 178,
-            "raw_flips": 303
+            "failures": 138,
+            "raw_flips": 336
           }
         ],
         "counts": {
@@ -163,22 +163,22 @@
           "barrier": 2,
           "delay": 1
         },
-        "padding_ns": 8240.0,
-        "final_schedule_ns": 410872.0
+        "padding_ns": 5348.0,
+        "final_schedule_ns": 407980.0
       },
       "r1_cz_echo": {
         "blocks": [
           {
             "block": 0,
             "shots": 1000,
-            "failures": 201,
-            "raw_flips": 366
+            "failures": 139,
+            "raw_flips": 304
           },
           {
             "block": 1,
             "shots": 1000,
-            "failures": 193,
-            "raw_flips": 344
+            "failures": 146,
+            "raw_flips": 313
           }
         ],
         "counts": {
@@ -188,22 +188,22 @@
           "barrier": 10,
           "delay": 1
         },
-        "padding_ns": 7904.0,
-        "final_schedule_ns": 410876.0
+        "padding_ns": 5008.0,
+        "final_schedule_ns": 407976.0
       },
       "r1_ancilla_measure": {
         "blocks": [
           {
             "block": 0,
             "shots": 1000,
-            "failures": 191,
-            "raw_flips": 350
+            "failures": 127,
+            "raw_flips": 304
           },
           {
             "block": 1,
             "shots": 1000,
-            "failures": 175,
-            "raw_flips": 339
+            "failures": 123,
+            "raw_flips": 286
           }
         ],
         "counts": {
@@ -213,8 +213,8 @@
           "barrier": 4,
           "delay": 1
         },
-        "padding_ns": 6168.0,
-        "final_schedule_ns": 410872.0
+        "padding_ns": 3276.0,
+        "final_schedule_ns": 407980.0
       },
       "r3": {
         "blocks": [
@@ -244,34 +244,34 @@
     "contrasts": [
       {
         "arm": "r1_cz_echo",
-        "delta_vs_idle": 0.009500000000000008,
-        "difference95_low": -0.01493253502581822,
-        "difference95_high": 0.03392244912150835,
-        "fisher_p": 0.47017315871049825,
-        "holm_p_3_contrasts": 0.9403463174209965
+        "delta_vs_idle": 0.002999999999999975,
+        "difference95_low": -0.018592989121853216,
+        "difference95_high": 0.024593476005546837,
+        "fisher_p": 0.8203169175913253,
+        "holm_p_3_contrasts": 0.8203169175913253
       },
       {
         "arm": "r1_ancilla_measure",
-        "delta_vs_idle": -0.004500000000000004,
-        "difference95_low": -0.028583702216732818,
-        "difference95_high": 0.019587916764505744,
-        "fisher_p": 0.7447526019052978,
-        "holm_p_3_contrasts": 0.9403463174209965
+        "delta_vs_idle": -0.014500000000000013,
+        "difference95_low": -0.03552217694438292,
+        "difference95_high": 0.00651531825343276,
+        "fisher_p": 0.19121907386593007,
+        "holm_p_3_contrasts": 0.38243814773186013
       },
       {
         "arm": "r3",
-        "delta_vs_idle": 0.138,
-        "difference95_low": 0.11115526681744965,
-        "difference95_high": 0.16459169697671655,
-        "fisher_p": 1.468769067498812e-23,
-        "holm_p_3_contrasts": 4.406307202496436e-23
+        "delta_vs_idle": 0.186,
+        "difference95_low": 0.1603202472844221,
+        "difference95_high": 0.21139540579208235,
+        "fisher_p": 8.869695321917319e-45,
+        "holm_p_3_contrasts": 2.660908596575196e-44
       }
     ],
     "original_primary_decoder_preserved": true,
     "three_one_round_dems_identical": true,
     "auxiliary_measurements_preserved_but_excluded_from_decoder": true,
     "fixed_patch_recipe_reproduced": true,
-    "timing_scope": "Full local schedules ~410.872 us, NOT the 15 us memory benchmark; no isolated memory-window duration was archived",
+    "timing_scope": "First complete syndrome record to final readout barrier, target 5.348 us; first three arms rerun, r3 is historical; NOT a common independent encoding boundary",
     "contrast_scope": "Derived three displayed contrasts only, unpaired shots, Fisher test + Holm over 3; original archive retains its original statistics unchanged"
   }
 }

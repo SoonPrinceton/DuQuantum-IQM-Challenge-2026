@@ -13,7 +13,7 @@ memory_near_zero,Z_r0_near0,0.0,0.0,400000.0,1080.0,1116.0,402196.0,[0.0],72,16,
 memory_near_zero,X_r0_near0,0.0,0.0,400000.0,752.0,1188.0,401940.0,[0.0],108,16,9,,"Post-preparation memory window, before final basis rotation/readout"
 memory_5us,Z_r0_5us,5000.0,5000.0,400000.0,1080.0,1116.0,407196.0,[5000.0],72,16,9,,"Post-preparation memory window, before final basis rotation/readout"
 memory_5us,X_r0_5us,5000.0,5000.0,400000.0,752.0,1188.0,406940.0,[5000.0],108,16,9,,"Post-preparation memory window, before final basis rotation/readout"
-component_controls,r1_idle,,,,,,410872.0,[8240.0],38,19,17,410872.0,Full schedule matched; separate memory boundaries not archived
-component_controls,r1_cz_echo,,,,,,410876.0,[7904.0],38,67,17,410872.0,Full schedule matched; separate memory boundaries not archived
-component_controls,r1_ancilla_measure,,,,,,410872.0,[6168.0],38,19,33,410872.0,Full schedule matched; separate memory boundaries not archived
-component_controls,r3,,,,,,410872.0,[0.0],106,67,33,410872.0,Full schedule matched; separate memory boundaries not archived
+component_controls,r1_idle,5348.0,5348.0,,,,407980.0,[5348.0],38,19,17,,First complete syndrome record to pre-readout barrier; NOT a shared independent encoded-state boundary
+component_controls,r1_cz_echo,5348.0,5344.0,,,,407976.0,[5008.0],38,67,17,,First complete syndrome record to pre-readout barrier; NOT a shared independent encoded-state boundary
+component_controls,r1_ancilla_measure,5348.0,5348.0,,,,407980.0,[3276.0],38,19,33,,First complete syndrome record to pre-readout barrier; NOT a shared independent encoded-state boundary
+component_controls,r3,5348.0,5348.0,,,,410872.0,[0.0],106,67,33,,First complete syndrome record to pre-readout barrier; NOT a shared independent encoded-state boundary

@@ -1,0 +1,8 @@
+{
+  "job_id": "01a170ea-65b8-76a6-8b90-8d5a2ce48469",
+  "arms": [
+    "r1_cz_echo",
+    "r1_ancilla_measure",
+    "r1_idle"
+  ]
+}

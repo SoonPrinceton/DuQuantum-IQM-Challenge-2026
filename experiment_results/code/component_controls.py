@@ -95,14 +95,18 @@ def analyze_controls(root, output, edges, calibration_id, wilson):
     assert meta['layout'] == source['metadata']['layout'] and meta['calibration_set_id'] == calibration_id
     assert meta['timing']['matched_locally'] and not meta['timing']['server_verified']
     timing = {t['arm']: t for t in meta['timing']['final']}
-    target = meta['timing']['target_full_schedule_ns']
-    job_ids = []
-    for block in range(meta['blocks']):
-        job = json.loads((run/f'block{block}_job.json').read_text())
-        status = json.loads((run/f'block{block}_status.json').read_text())
-        assert status['job_id'] == job['job_id'] and status['status'] == 'completed'
-        assert set(ARM_NAMES).issubset(job['arms'])
-        job_ids.append(job['job_id'])
+    record_mode = meta['timing'].get('matching_basis') == 'first_round_record_to_final_readout_boundary'
+    target = meta['timing'].get('target_record_window_ns') if record_mode else meta['timing']['target_full_schedule_ns']
+    job_ids_by_arm = {}
+    for name in ARM_NAMES:
+        acquisition = run/plan.get('acquisition_by_arm', {}).get(name, '.')
+        job_ids_by_arm[name] = []
+        for block in range(meta['blocks']):
+            job = json.loads((acquisition/f'block{block}_job.json').read_text())
+            status = json.loads((acquisition/f'block{block}_status.json').read_text())
+            assert status['job_id'] == job['job_id'] and status['status'] == 'completed'
+            assert name in job['arms']
+            job_ids_by_arm[name].append(job['job_id'])
     summaries = []; timings = []; details = {}; native_by_arm = {}; models = {}
     for name in ARM_NAMES:
         a = arms[name]; folder = run/name
@@ -112,7 +116,8 @@ def analyze_controls(root, output, edges, calibration_id, wilson):
         assert all(i['name'] in ('prx', 'cz', 'barrier', 'delay', 'measure') for i in ops)
         counts = Counter(i['name'] for i in ops)
         assert counts['cz'] == timing[name]['compiled_cz_count'] == (67 if name in ('r1_cz_echo', 'r3') else 19)
-        assert abs(timing[name]['full_schedule_ns']-target) <= meta['timing']['tolerance_ns']
+        checked_duration = timing[name]['record_window_ns'] if record_mode else timing[name]['full_schedule_ns']
+        assert abs(checked_duration-target) <= meta['timing']['tolerance_ns']
         reference = stim.Circuit.from_file(str(folder/'reference.stim'))
         model = stim.Circuit.from_file(str(folder/'model.stim'))
         dem = stim.DetectorErrorModel.from_file(str(folder/'model.dem')); models[name] = dem
@@ -150,11 +155,11 @@ def analyze_controls(root, output, edges, calibration_id, wilson):
         assert np.allclose(wilson(failures, n), s['wilson95'], atol=1e-12, rtol=0)
         summaries.append(dict(dataset='component_controls', arm=name, basis='Z', kind='legacy_Z_memory_component_control', rounds=a['rounds'],
             shots=n, failures=failures, ler=s['p_error'], wilson95_low=s['wilson95'][0], wilson95_high=s['wilson95'][1],
-            raw_flips=raw_flips, raw_probability=s['raw_probability'], calibration_set_id=meta['calibration_set_id'], job_ids='|'.join(job_ids)))
-        timings.append(dict(dataset='component_controls', arm=name, requested_memory_ns='', compiled_memory_ns='',
+            raw_flips=raw_flips, raw_probability=s['raw_probability'], calibration_set_id=meta['calibration_set_id'], job_ids='|'.join(job_ids_by_arm[name])))
+        timings.append(dict(dataset='component_controls', arm=name, requested_memory_ns=target if record_mode else '', compiled_memory_ns=checked_duration if record_mode else '',
             initialization_ns='', state_preparation_ns='', final_readout_ns='', full_schedule_ns=timing[name]['full_schedule_ns'],
             idle_slots_ns=json.dumps([a['padding_ns']]), native_prx=counts['prx'], native_cz=counts['cz'], native_measurements=counts['measure'],
-            target_full_schedule_ns=target, timing_definition='Full schedule matched; separate memory boundaries not archived'))
+            target_full_schedule_ns='' if record_mode else target, timing_definition='First complete syndrome record to pre-readout barrier; NOT a shared independent encoded-state boundary' if record_mode else 'Full schedule matched; separate memory boundaries not archived'))
         details[name] = dict(blocks=blocks, counts=dict(counts), padding_ns=a['padding_ns'], final_schedule_ns=timing[name]['full_schedule_ns'])
     assert models['r1_idle'].approx_equals(models['r1_cz_echo'], atol=1e-12)
     assert models['r1_idle'].approx_equals(models['r1_ancilla_measure'], atol=1e-12)
@@ -174,12 +179,13 @@ def analyze_controls(root, output, edges, calibration_id, wilson):
     report = dict(arms=list(ARM_NAMES), shots=sum(s['shots'] for s in summaries), source_archived_arm_excluded='r0_idle',
         details=details, contrasts=contrasts, original_primary_decoder_preserved=True, three_one_round_dems_identical=True,
         auxiliary_measurements_preserved_but_excluded_from_decoder=True, fixed_patch_recipe_reproduced=True,
-        timing_scope='Full local schedules ~410.872 us, NOT the 15 us memory benchmark; no isolated memory-window duration was archived',
+        timing_scope=f'First complete syndrome record to final readout barrier, target {target/1000:g} us; first three arms rerun, r3 is historical; NOT a common independent encoding boundary' if record_mode else 'Full local schedules ~410.872 us, NOT the 15 us memory benchmark; no isolated memory-window duration was archived',
         contrast_scope='Derived three displayed contrasts only, unpaired shots, Fisher test + Holm over 3; original archive retains its original statistics unchanged')
     (output/'tables/component_controls.json').write_text(json.dumps(dict(summary=summaries, timing=timings, analysis=report), indent=2)+'\n')
     (output/'tables/component_native_instructions.json').write_text(json.dumps(native_by_arm, indent=2)+'\n')
-    lines = ['# Four component controls: local full-schedule matching', '',
-        'This is the earlier Z-memory experiment, distinct from the common unitary-encoder 15 us benchmark. Original failure counts, primary DEMs and all recorded metadata are preserved.', '',
+    lines = ['# Four component controls: '+('first-syndrome-record window matching' if record_mode else 'local full-schedule matching'), '',
+        'Z-memory, distinct from the common unitary-encoder 15 us benchmark. Measured counts, primary DEMs and acquisition metadata are preserved.',
+        report['timing_scope'], '',
         '| Arm | Failures / shots | LER (Wilson 95% CI) | Raw parity error | CZ | Padding | Full schedule |',
         '|---|---:|---|---:|---:|---:|---:|']
     for label, s in zip(LABELS, summaries):
@@ -189,21 +195,21 @@ def analyze_controls(root, output, edges, calibration_id, wilson):
     for c in contrasts:
         lines.append(f'| {c["arm"]} | {100*c["delta_vs_idle"]:+.2f} | [{100*c["difference95_low"]:+.2f}, {100*c["difference95_high"]:+.2f}] | {c["holm_p_3_contrasts"]:.4g} |')
     lines += ['', '## Interpretation', '',
-        '- Three complete rounds have 13.80 percentage points higher LER than one round plus waiting; the gap has the same direction in both saved blocks.',
-        '- Extra paired-CZ echo and repeated ancilla measurement show no statistically detected difference here. This is not an equivalence test or evidence that gate/readout noise is absent.',
+        f'- Three-round minus one-round-idle LER difference: {100*next(c["delta_vs_idle"] for c in contrasts if c["arm"] == "r3"):+.2f} percentage points. Refer to the intervals and adjusted tests above.',
+        '- A non-significant contrast is not an equivalence test or evidence that gate/readout noise is absent.',
         '- The CZ intervention is 48 extra gates in ideal CZ-CZ identity pairs on the 24 check links, not arbitrary unpaired entangling gates.',
         '- The measurement intervention repeats the already-measured ancillas twice in Z, without re-entangling data or adding H. It records 16 auxiliary bits which are deliberately excluded from the primary decoder.',
         '- All three one-round controls have the identical primary DEM; three rounds use their own full-history DEM.',
-        '- Full schedule durations, including initialization/readout, differ by at most 4 ns. Operation additions replace waiting; the contrast measures their net effect, not isolated error per gate.',
+        '- Matching uses the first complete syndrome record, not a common independently encoded-state barrier. The reused three-round measurements come from earlier jobs; drift is a confound.' if record_mode else '- Full schedule durations, including initialization/readout, differ by at most 4 ns. Operation additions replace waiting; the contrast measures their net effect, not isolated error per gate.',
         '- These interventions do not reproduce the full gate/measurement/basis-rotation sequence of repeated extraction, so the gap cannot be uniquely attributed to CZ or measurement alone.',
-        '- The original plan/results/job metadata also list an old unencoded r0 arm. Those records remain verbatim for provenance; its measurement data are not included and it is excluded from all submitted analyses.',
-        '- Missing isolated memory-boundary timings are blank in timing.csv; they are not inferred by subtracting an assumed reset time. Server timestamps and full waveforms remain unavailable.']
+        '- Historical metadata remain archived, including the unused original unencoded r0 entry. That entry is excluded from the analysis.',
+        '- A record-availability timestamp is not a separately established logical-state preparation boundary. Server timestamps and full waveforms remain unavailable.' if record_mode else '- Missing isolated memory-boundary timings are blank in timing.csv; they are not inferred by subtracting an assumed reset time. Server timestamps and full waveforms remain unavailable.']
     (output/'COMPONENT_CONTROLS.md').write_text('\n'.join(lines)+'\n')
-    plot_controls(summaries, contrasts, output/'plots/component_controls.png')
+    plot_controls(summaries, contrasts, output/'plots/component_controls.png', record_mode)
     return summaries, timings, report
 
 
-def plot_controls(rows, contrasts, path):
+def plot_controls(rows, contrasts, path, record_mode=False):
     import matplotlib
     matplotlib.use('Agg')
     import matplotlib.pyplot as plt
@@ -215,7 +221,7 @@ def plot_controls(rows, contrasts, path):
     axes[0].errorbar(x, p, yerr=np.stack([p-low, high-p]), fmt='o', capsize=5, label='Decoded, Wilson 95% CI')
     axes[0].plot(x, [s['raw_probability']*100 for s in rows], 's--', label='Raw logical parity error', alpha=.8)
     axes[0].set(xticks=x, xticklabels=['1 round\n+ idle', '1 round\n+ CZ echo', '1 round\n+ ancilla reads', '3 rounds'],
-                ylabel='Error probability (%)', title='Z-memory, same local full-schedule duration', ylim=(0, 50))
+                ylabel='Error probability (%)', title='Z-memory, matched first-record windows' if record_mode else 'Z-memory, same local full-schedule duration', ylim=(0, 60))
     axes[0].legend(fontsize=8); axes[0].grid(alpha=.2)
     d = np.array([c['delta_vs_idle'] for c in contrasts])*100
     lo = np.array([c['difference95_low'] for c in contrasts])*100

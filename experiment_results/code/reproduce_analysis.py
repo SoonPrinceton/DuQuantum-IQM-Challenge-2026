@@ -174,7 +174,7 @@ def main():
         lines.append(f'| {s["dataset"]} | {s["arm"]} | {s["failures"]}/{s["shots"]} | {s["ler"]:.2%} | [{s["wilson95_low"]:.2%}, {s["wilson95_high"]:.2%}] |')
     lines += ['', 'Timing values in tables/timing.csv are archived local pulse-compiler summaries, not server timestamps or full waveforms.',
               'The primary 14 native gate sequences match the direct no-routing recipe; the four earlier controls reproduce their saved fixed-patch intervention recipe. All CZ links exist in the saved architecture. This is gate-level verification.',
-              'The component controls match full local schedules (~410.872 us), not the 15 us memory window. See COMPONENT_CONTROLS.md for their separate timing definition and contrasts.',
+              'Component-control timing scope: '+control_report['timing_scope']+'. See COMPONENT_CONTROLS.md for details.',
               'Near-zero/5 us/15 us results come from separate jobs. Calibration ID is shared; drift is not ruled out.']
     (output/'RESULTS.md').write_text('\n'.join(lines)+'\n')
     print(json.dumps(validation, indent=2)); print(f'Output: {output}')

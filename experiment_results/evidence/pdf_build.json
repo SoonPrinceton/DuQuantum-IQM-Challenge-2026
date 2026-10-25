@@ -1,0 +1,17 @@
+{
+  "built_utc": "2026-10-25T02:48:55.631411+00:00",
+  "tex_source_sha256": "84a96d79a72cb2ba44d3b2e9590adc0f26d7d3a378b3aaa0c02e173097718a7f",
+  "tex_source_unchanged": true,
+  "pdf_sha256": "6d49a5cc6c91959089859f1935df7feabcc623016f7410c9e18a396f836b0774",
+  "pages": 2,
+  "compiler": "pdfLaTeX / TeX Live 2026",
+  "passes": 2,
+  "installed_dependency": "enumitem",
+  "dependency_version": "2025/02/06 v3.11 Customized lists",
+  "dependency_source": "CTAN TeX Live repository (tlmgr verified)",
+  "dependency_tree": "/private/tmp/iqm-report-texmf",
+  "system_tex_installation_modified": false,
+  "updated_component_values_verified_in_pdf": true,
+  "visual_pages_checked": true,
+  "note": "Subsequent PDF rebuild after the earlier TeX-only update. No report text, measured data or plots changed."
+}

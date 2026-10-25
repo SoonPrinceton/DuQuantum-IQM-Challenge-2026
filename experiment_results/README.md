@@ -59,27 +59,20 @@ decoder floor; they do not measure preparation fidelity alone. Added storage
 substantially degrades memory, especially X-memory. Separate jobs and possible
 drift prevent a unique physical diagnosis or a precise coherence-time fit.
 
-### Earlier component controls (Z-memory)
+### Component controls: rerun with matched first-record windows
 
 | Control | Failures / shots | Decoded LER | Raw parity error |
 |---|---:|---:|---:|
-| 1 round + idle | 375/2000 | 18.75% | 33.45% |
-| 1 round + CZ echo | 394/2000 | 19.70% | 35.50% |
-| 1 round + repeated ancilla measurement | 366/2000 | 18.30% | 34.45% |
-| 3 rounds | 651/2000 | 32.55% | 41.70% |
+| 1 round + idle | 279/2000 | 13.95% | 32.30% |
+| 1 round + CZ echo | 285/2000 | 14.25% | 30.85% |
+| 1 round + repeated ancilla measurement | 250/2000 | 12.50% | 29.50% |
+| 3 rounds (historical) | 651/2000 | 32.55% | 41.70% |
 
-These match **full local schedules of 410.872–410.876 μs**, rather than the
-15 μs post-preparation memory window above. Three complete rounds are worse
-than one round plus waiting by 13.80 percentage points. The added CZ/measurement
-controls show no statistically detected difference here; this does not prove
-those operations are error-free or explain the entire three-round gap.
-
-The CZ control inserts 48 extra gates in **CZ–CZ identity pairs**. The measurement
-control repeats the eight already-measured ancillas twice; its 16 auxiliary bits
-are preserved but intentionally excluded from decoding. All three one-round
-controls use the same primary DEM. See **[COMPONENT_CONTROLS.md](COMPONENT_CONTROLS.md)**
-for intervals, contrasts and interpretation limits. Missing separate memory
-boundary timings are left blank in the CSV, not inferred.
+The three one-round arms were remeasured with shorter padding, matching the historical three-round **first complete syndrome record → final data-readout barrier** interval to approximately 5.348 μs.
+The three-round measurement data are reused, not remeasured. These are different acquisitions; shared calibration does not eliminate drift.
+**This is record-window matching, not a verified common independent encoded-state preparation boundary.** The three-round circuit is pipelined.
+The previous full-schedule-matched data are preserved under `evidence/previous_component_controls/`. Full original metadata for both acquisitions are in `data/component_controls/acquisition_sets/`.
+See [COMPONENT_CONTROLS.md](COMPONENT_CONTROLS.md) for confidence intervals, timing and contrasts.
 
 ## Implementation and evidence
 
@@ -116,9 +109,7 @@ Per-arm archives include raw measurement matrices, detector events, logical
 flips and predictions (`block*.npz`), Stim circuits, DEMs and native instructions.
 Duplicate raw JSON, debug/mock outputs and exploratory searches are omitted.
 Original absolute metadata paths remain as provenance; runtime paths are local.
-The component archive retains its original five-arm plan/results/job metadata
-verbatim, including an old unencoded zero-round entry. That entry's measurement
-files are not included, and it is excluded from every submitted plot and analysis.
+Component acquisition metadata are preserved separately per source. The old unused unencoded zero-round entry remains only in historical provenance and is excluded from analyses.
 
 For implementation details and optional future hardware execution, see
 **[METHODS.md](METHODS.md)**. Hardware dependencies are separate in

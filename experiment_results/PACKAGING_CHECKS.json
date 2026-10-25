@@ -1,7 +1,7 @@
 {
   "unchanged_original_diagnostics_files": 725,
   "source_function_bodies_preserved": 38,
-  "original_copied_data_files": 142,
+  "original_copied_data_files": 177,
   "source_copy_hashes_match": true,
   "no_diagnostics_import_dependency": true,
   "no_credentials_or_cache_files_copied": true,
@@ -11,5 +11,8 @@
   "component_recipe_only_change_is_omitting_legacy_zero_arm": true,
   "analyzed_configurations": 18,
   "measured_shots_redecoded": 36000,
-  "component_auxiliary_readouts_preserved": true
+  "component_auxiliary_readouts_preserved": true,
+  "component_record_window_rerun_imported": true,
+  "historical_r3_unchanged": true,
+  "previous_component_data_archived": true
 }

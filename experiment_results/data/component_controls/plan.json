@@ -25,120 +25,53 @@
     "blocks": 2,
     "correlated": false,
     "timing": {
-      "target_full_schedule_ns": 410872.0,
+      "matching_basis": "first_round_record_to_final_readout_boundary",
+      "target_record_window_ns": 5348.0,
       "tolerance_ns": 8.0,
-      "iterations": [
-        [
-          {
-            "arm": "r1_idle",
-            "padding_ns": 0.0,
-            "full_schedule_ns": 402632.0,
-            "compiled_cz_count": 19
-          },
-          {
-            "arm": "r1_cz_echo",
-            "padding_ns": 0.0,
-            "full_schedule_ns": 402968.0,
-            "compiled_cz_count": 67
-          },
-          {
-            "arm": "r1_ancilla_measure",
-            "padding_ns": 0.0,
-            "full_schedule_ns": 404704.0,
-            "compiled_cz_count": 19
-          },
-          {
-            "arm": "r3",
-            "padding_ns": 0.0,
-            "full_schedule_ns": 410872.0,
-            "compiled_cz_count": 67
-          },
-          {
-            "arm": "r0_idle",
-            "padding_ns": 0.0,
-            "full_schedule_ns": 401116.0,
-            "compiled_cz_count": 0
-          }
-        ],
-        [
-          {
-            "arm": "r1_idle",
-            "padding_ns": 8240.0,
-            "full_schedule_ns": 410872.0,
-            "compiled_cz_count": 19
-          },
-          {
-            "arm": "r1_cz_echo",
-            "padding_ns": 7904.0,
-            "full_schedule_ns": 410876.0,
-            "compiled_cz_count": 67
-          },
-          {
-            "arm": "r1_ancilla_measure",
-            "padding_ns": 6168.0,
-            "full_schedule_ns": 410872.0,
-            "compiled_cz_count": 19
-          },
-          {
-            "arm": "r3",
-            "padding_ns": 0.0,
-            "full_schedule_ns": 410872.0,
-            "compiled_cz_count": 67
-          },
-          {
-            "arm": "r0_idle",
-            "padding_ns": 9756.0,
-            "full_schedule_ns": 410876.0,
-            "compiled_cz_count": 0
-          }
-        ]
-      ],
+      "matched_locally": true,
+      "server_verified": false,
       "final": [
         {
           "arm": "r1_idle",
-          "padding_ns": 8240.0,
-          "full_schedule_ns": 410872.0,
-          "compiled_cz_count": 19
+          "padding_ns": 5348.0,
+          "full_schedule_ns": 407980.0,
+          "compiled_cz_count": 19,
+          "record_window_ns": 5348.0
         },
         {
           "arm": "r1_cz_echo",
-          "padding_ns": 7904.0,
-          "full_schedule_ns": 410876.0,
-          "compiled_cz_count": 67
+          "padding_ns": 5008.0,
+          "full_schedule_ns": 407976.0,
+          "compiled_cz_count": 67,
+          "record_window_ns": 5344.0
         },
         {
           "arm": "r1_ancilla_measure",
-          "padding_ns": 6168.0,
-          "full_schedule_ns": 410872.0,
-          "compiled_cz_count": 19
+          "padding_ns": 3276.0,
+          "full_schedule_ns": 407980.0,
+          "compiled_cz_count": 19,
+          "record_window_ns": 5348.0
         },
         {
           "arm": "r3",
           "padding_ns": 0.0,
           "full_schedule_ns": 410872.0,
-          "compiled_cz_count": 67
-        },
-        {
-          "arm": "r0_idle",
-          "padding_ns": 9756.0,
-          "full_schedule_ns": 410876.0,
-          "compiled_cz_count": 0
+          "compiled_cz_count": 67,
+          "record_window_ns": 5348.0
         }
-      ],
-      "definition": "Local full-schedule duration, same common initialization and final data readout; not measured server execution timestamps",
-      "server_verified": false,
-      "matched_locally": true
+      ]
     },
     "preflight_passed": true,
     "measurement_policy": "First-round main records only for all r1 arms; auxiliary repeats saved but excluded from decoder",
     "decoder_policy": "All three r1 arms share the same primary one-round DEM; r3 uses its own round-matched DEM. CZ-aware model is saved only for secondary analysis.",
-    "zero_round_policy": "Prepare physical data in Z0, no stabilizer extraction, same final logical-Z parity support. No decoder/correction. Not an encoded arbitrary-state quantum memory.",
     "limitations": [
-      "Full pulse schedule matching assumes identical common initialization and final readout overhead.",
-      "Local compiler/controller settings may differ from the historical/server execution configuration.",
-      "CZ echo is an identity control with 48 extra CZs, not an unpaired CZ on encoded data.",
-      "Primary decoder is fixed across the r1 controls and does not model extra component/padding damage; raw outcomes are also reported."
-    ]
+      "Three-round reference is pipelined; its first complete record is not a common independent encoding boundary.",
+      "New one-round shots and historical three-round shots are separate acquisitions; drift remains possible.",
+      "Current local controller settings with pinned historical gate calibration; not server timing verification.",
+      "Original primary one-round DEMs are frozen; extra CZ/readout/padding noise is not separately fitted."
+    ],
+    "acquisition_note": "Three new one-round arms; unchanged historical three-round data. Separate acquisitions; drift is possible.",
+    "matching_definition": "First complete syndrome-readout trigger ends -> original global barrier before final data readout; NOT a shared independent encoded-state preparation boundary"
   },
   "arms": [
     {
@@ -855,7 +788,7 @@
           }
         }
       ],
-      "padding_ns": 8240.0,
+      "padding_ns": 5348.0,
       "boundary": 65
     },
     {
@@ -2334,7 +2267,7 @@
           13
         ]
       ],
-      "padding_ns": 7904.0,
+      "padding_ns": 5008.0,
       "boundary": 121
     },
     {
@@ -3241,7 +3174,7 @@
           }
         }
       ],
-      "padding_ns": 6168.0,
+      "padding_ns": 3276.0,
       "boundary": 83
     },
     {
@@ -5168,119 +5101,13 @@
       ],
       "padding_ns": 0.0,
       "boundary": 197
-    },
-    {
-      "name": "r0_idle",
-      "rounds": 0,
-      "component": "unencoded_Z0_parity_baseline",
-      "base_ops": [
-        {
-          "name": "barrier",
-          "locus": [
-            "QB1",
-            "QB2",
-            "QB6",
-            "QB13",
-            "QB4",
-            "QB5",
-            "QB11",
-            "QB12",
-            "QB20",
-            "QB21",
-            "QB3",
-            "QB9",
-            "QB10",
-            "QB18",
-            "QB19",
-            "QB27",
-            "QB26"
-          ],
-          "args": {}
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB1"
-          ],
-          "args": {
-            "key": "m_000"
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB6"
-          ],
-          "args": {
-            "key": "m_001"
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB13"
-          ],
-          "args": {
-            "key": "m_002"
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB4"
-          ],
-          "args": {
-            "key": "m_003"
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB11"
-          ],
-          "args": {
-            "key": "m_004"
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB20"
-          ],
-          "args": {
-            "key": "m_005"
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB9"
-          ],
-          "args": {
-            "key": "m_006"
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB18"
-          ],
-          "args": {
-            "key": "m_007"
-          }
-        },
-        {
-          "name": "measure",
-          "locus": [
-            "QB27"
-          ],
-          "args": {
-            "key": "m_008"
-          }
-        }
-      ],
-      "padding_ns": 9756.0,
-      "boundary": 0
     }
-  ]
+  ],
+  "rematched_run": "/Users/soonprinceton/Projects/DuQuantum-IQM-Challenge-2026/diagnostics/results/component_storage_rematched/20261025T022823_665676Z",
+  "acquisition_by_arm": {
+    "r1_idle": "acquisition_sets/rerun",
+    "r1_cz_echo": "acquisition_sets/rerun",
+    "r1_ancilla_measure": "acquisition_sets/rerun",
+    "r3": "acquisition_sets/original"
+  }
 }

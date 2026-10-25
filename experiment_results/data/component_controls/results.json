@@ -25,157 +25,90 @@
     "blocks": 2,
     "correlated": false,
     "timing": {
-      "target_full_schedule_ns": 410872.0,
+      "matching_basis": "first_round_record_to_final_readout_boundary",
+      "target_record_window_ns": 5348.0,
       "tolerance_ns": 8.0,
-      "iterations": [
-        [
-          {
-            "arm": "r1_idle",
-            "padding_ns": 0.0,
-            "full_schedule_ns": 402632.0,
-            "compiled_cz_count": 19
-          },
-          {
-            "arm": "r1_cz_echo",
-            "padding_ns": 0.0,
-            "full_schedule_ns": 402968.0,
-            "compiled_cz_count": 67
-          },
-          {
-            "arm": "r1_ancilla_measure",
-            "padding_ns": 0.0,
-            "full_schedule_ns": 404704.0,
-            "compiled_cz_count": 19
-          },
-          {
-            "arm": "r3",
-            "padding_ns": 0.0,
-            "full_schedule_ns": 410872.0,
-            "compiled_cz_count": 67
-          },
-          {
-            "arm": "r0_idle",
-            "padding_ns": 0.0,
-            "full_schedule_ns": 401116.0,
-            "compiled_cz_count": 0
-          }
-        ],
-        [
-          {
-            "arm": "r1_idle",
-            "padding_ns": 8240.0,
-            "full_schedule_ns": 410872.0,
-            "compiled_cz_count": 19
-          },
-          {
-            "arm": "r1_cz_echo",
-            "padding_ns": 7904.0,
-            "full_schedule_ns": 410876.0,
-            "compiled_cz_count": 67
-          },
-          {
-            "arm": "r1_ancilla_measure",
-            "padding_ns": 6168.0,
-            "full_schedule_ns": 410872.0,
-            "compiled_cz_count": 19
-          },
-          {
-            "arm": "r3",
-            "padding_ns": 0.0,
-            "full_schedule_ns": 410872.0,
-            "compiled_cz_count": 67
-          },
-          {
-            "arm": "r0_idle",
-            "padding_ns": 9756.0,
-            "full_schedule_ns": 410876.0,
-            "compiled_cz_count": 0
-          }
-        ]
-      ],
+      "matched_locally": true,
+      "server_verified": false,
       "final": [
         {
           "arm": "r1_idle",
-          "padding_ns": 8240.0,
-          "full_schedule_ns": 410872.0,
-          "compiled_cz_count": 19
+          "padding_ns": 5348.0,
+          "full_schedule_ns": 407980.0,
+          "compiled_cz_count": 19,
+          "record_window_ns": 5348.0
         },
         {
           "arm": "r1_cz_echo",
-          "padding_ns": 7904.0,
-          "full_schedule_ns": 410876.0,
-          "compiled_cz_count": 67
+          "padding_ns": 5008.0,
+          "full_schedule_ns": 407976.0,
+          "compiled_cz_count": 67,
+          "record_window_ns": 5344.0
         },
         {
           "arm": "r1_ancilla_measure",
-          "padding_ns": 6168.0,
-          "full_schedule_ns": 410872.0,
-          "compiled_cz_count": 19
+          "padding_ns": 3276.0,
+          "full_schedule_ns": 407980.0,
+          "compiled_cz_count": 19,
+          "record_window_ns": 5348.0
         },
         {
           "arm": "r3",
           "padding_ns": 0.0,
           "full_schedule_ns": 410872.0,
-          "compiled_cz_count": 67
-        },
-        {
-          "arm": "r0_idle",
-          "padding_ns": 9756.0,
-          "full_schedule_ns": 410876.0,
-          "compiled_cz_count": 0
+          "compiled_cz_count": 67,
+          "record_window_ns": 5348.0
         }
-      ],
-      "definition": "Local full-schedule duration, same common initialization and final data readout; not measured server execution timestamps",
-      "server_verified": false,
-      "matched_locally": true
+      ]
     },
     "preflight_passed": true,
     "measurement_policy": "First-round main records only for all r1 arms; auxiliary repeats saved but excluded from decoder",
     "decoder_policy": "All three r1 arms share the same primary one-round DEM; r3 uses its own round-matched DEM. CZ-aware model is saved only for secondary analysis.",
-    "zero_round_policy": "Prepare physical data in Z0, no stabilizer extraction, same final logical-Z parity support. No decoder/correction. Not an encoded arbitrary-state quantum memory.",
     "limitations": [
-      "Full pulse schedule matching assumes identical common initialization and final readout overhead.",
-      "Local compiler/controller settings may differ from the historical/server execution configuration.",
-      "CZ echo is an identity control with 48 extra CZs, not an unpaired CZ on encoded data.",
-      "Primary decoder is fixed across the r1 controls and does not model extra component/padding damage; raw outcomes are also reported."
-    ]
+      "Three-round reference is pipelined; its first complete record is not a common independent encoding boundary.",
+      "New one-round shots and historical three-round shots are separate acquisitions; drift remains possible.",
+      "Current local controller settings with pinned historical gate calibration; not server timing verification.",
+      "Original primary one-round DEMs are frozen; extra CZ/readout/padding noise is not separately fitted."
+    ],
+    "acquisition_note": "Three new one-round arms; unchanged historical three-round data. Separate acquisitions; drift is possible.",
+    "matching_definition": "First complete syndrome-readout trigger ends -> original global barrier before final data readout; NOT a shared independent encoded-state preparation boundary"
   },
   "summary": {
     "r1_idle": {
       "shots": 2000,
-      "failures": 375,
-      "raw_flips": 669,
+      "failures": 279,
+      "raw_flips": 646,
       "decoder": "PyMatching",
-      "p_error": 0.1875,
+      "p_error": 0.1395,
       "wilson95": [
-        0.1709991046047915,
-        0.20519904994599153
+        0.12500559293773536,
+        0.155376598152048
       ],
-      "raw_probability": 0.3345
+      "raw_probability": 0.323
     },
     "r1_cz_echo": {
       "shots": 2000,
-      "failures": 394,
-      "raw_flips": 710,
+      "failures": 285,
+      "raw_flips": 617,
       "decoder": "PyMatching",
-      "p_error": 0.197,
+      "p_error": 0.1425,
       "wilson95": [
-        0.18015682931283034,
-        0.21500490133960892
+        0.1278647408518039,
+        0.15850594795429188
       ],
-      "raw_probability": 0.355
+      "raw_probability": 0.3085
     },
     "r1_ancilla_measure": {
       "shots": 2000,
-      "failures": 366,
-      "raw_flips": 689,
+      "failures": 250,
+      "raw_flips": 590,
       "decoder": "PyMatching",
-      "p_error": 0.183,
+      "p_error": 0.125,
       "wilson95": [
-        0.16666695547445123,
-        0.20054845250186307
+        0.1112208289581945,
+        0.14021695650274513
       ],
-      "raw_probability": 0.3445
+      "raw_probability": 0.295
     },
     "r3": {
       "shots": 2000,
@@ -188,44 +121,6 @@
         0.3463527887645251
       ],
       "raw_probability": 0.417
-    },
-    "r0_idle": {
-      "shots": 2000,
-      "failures": 22,
-      "raw_flips": 22,
-      "decoder": "none_bare_parity",
-      "p_error": 0.011,
-      "wilson95": [
-        0.007275425411318251,
-        0.016599446829747115
-      ],
-      "raw_probability": 0.011
     }
-  },
-  "comparisons": [
-    {
-      "arm": "r0_idle",
-      "minus_r1_idle": -0.1765,
-      "p_fisher": 1.518525344479577e-91,
-      "p_holm": 6.074101377918308e-91
-    },
-    {
-      "arm": "r1_cz_echo",
-      "minus_r1_idle": 0.009500000000000008,
-      "p_fisher": 0.47017315871049825,
-      "p_holm": 0.9403463174209965
-    },
-    {
-      "arm": "r1_ancilla_measure",
-      "minus_r1_idle": -0.004500000000000004,
-      "p_fisher": 0.7447526019052978,
-      "p_holm": 0.9403463174209965
-    },
-    {
-      "arm": "r3",
-      "minus_r1_idle": 0.138,
-      "p_fisher": 1.468769067498812e-23,
-      "p_holm": 4.406307202496436e-23
-    }
-  ]
+  }
 }
